@@ -1,0 +1,70 @@
+{
+  "subgraphs": [
+    {
+      "id": 1,
+      "layer_start": 0,
+      "layer_end": 2,
+      "path_segments_count": 3,
+      "nodes_count": 6,
+      "edges_count": 6,
+      "path_segments": [
+        "start → noMatch → reject",
+        "start → ProtAddrParser_ipv4 → start_0",
+        "start → ProtAddrParser_ipv6 → start_0"
+      ]
+    },
+    {
+      "id": 2,
+      "layer_start": 2,
+      "layer_end": 5,
+      "path_segments_count": 5,
+      "nodes_count": 7,
+      "edges_count": 6,
+      "path_segments": [
+        "start_0 → start_0_false → start_0_join → start_0_true_0",
+        "start_0 → start_0_true → start_0_join → start_0_true_0",
+        "reject",
+        "start_0 → start_0_false → start_0_join → start_0_false_0",
+        "start_0 → start_0_true → start_0_join → start_0_false_0"
+      ]
+    },
+    {
+      "id": 3,
+      "layer_start": 5,
+      "layer_end": 7,
+      "path_segments_count": 6,
+      "nodes_count": 6,
+      "edges_count": 5,
+      "path_segments": [
+        "start_0_true_0 → start_0_join_0 → ProtAddrParser_ipv6_0",
+        "start_0_false_0 → start_0_join_0 → noMatch",
+        "start_0_false_0 → start_0_join_0 → ProtAddrParser_ipv4_0",
+        "start_0_false_0 → start_0_join_0 → ProtAddrParser_ipv6_0",
+        "start_0_true_0 → start_0_join_0 → noMatch",
+        "start_0_true_0 → start_0_join_0 → ProtAddrParser_ipv4_0"
+      ]
+    },
+    {
+      "id": 4,
+      "layer_start": 7,
+      "layer_end": 13,
+      "path_segments_count": 9,
+      "nodes_count": 12,
+      "edges_count": 12,
+      "path_segments": [
+        "ProtAddrParser_ipv6_0 → start_1 → start_1_true → start_1_join → start_1_true_0 → start_1_join_0 → accept",
+        "ProtAddrParser_ipv4_0 → start_1 → start_1_true → start_1_join → start_1_true_0 → start_1_join_0 → accept",
+        "ProtAddrParser_ipv4_0 → start_1 → start_1_false → start_1_join → start_1_true_0 → start_1_join_0 → accept",
+        "noMatch → reject",
+        "ProtAddrParser_ipv6_0 → start_1 → start_1_true → start_1_join → start_1_false_0 → start_1_join_0 → accept",
+        "ProtAddrParser_ipv4_0 → start_1 → start_1_false → start_1_join → start_1_false_0 → start_1_join_0 → accept",
+        "ProtAddrParser_ipv6_0 → start_1 → start_1_false → start_1_join → start_1_true_0 → start_1_join_0 → accept",
+        "ProtAddrParser_ipv4_0 → start_1 → start_1_true → start_1_join → start_1_false_0 → start_1_join_0 → accept",
+        "ProtAddrParser_ipv6_0 → start_1 → start_1_false → start_1_join → start_1_false_0 → start_1_join_0 → accept"
+      ]
+    }
+  ],
+  "total_segments": 23,
+  "original_paths_count": 73,
+  "unique_node_paths_count": 73
+}

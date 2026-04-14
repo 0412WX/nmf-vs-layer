@@ -1,0 +1,628 @@
+{
+  "source_file": "/home/npu_workspace/LLM_parser/HyperParser/input_files/P4_code/p4_16_samples_outputs/parser-unroll-test9-midend.p4",
+  "source_relative_path": "p4_16_samples_outputs/parser-unroll-test9-midend.p4",
+  "num_parsers": 1,
+  "parsers": [
+    {
+      "parser_name": "p",
+      "num_nodes": 18,
+      "num_edges": 31,
+      "start_state": "start",
+      "nodes": [
+        "stateOutOfBound",
+        "finite_loop",
+        "finite_loop1",
+        "finite_loop2",
+        "infinite_loop",
+        "mixed_finite_loop",
+        "mixed_finite_loop1",
+        "mixed_finite_loop2",
+        "mixed_infinite_loop",
+        "mixed_infinite_loop1",
+        "mixed_infinite_loop2",
+        "noMatch",
+        "start",
+        "start_loops",
+        "start_loops1",
+        "start_loops2",
+        "accept",
+        "reject"
+      ],
+      "node_to_index": {
+        "stateOutOfBound": 0,
+        "finite_loop": 1,
+        "finite_loop1": 2,
+        "finite_loop2": 3,
+        "infinite_loop": 4,
+        "mixed_finite_loop": 5,
+        "mixed_finite_loop1": 6,
+        "mixed_finite_loop2": 7,
+        "mixed_infinite_loop": 8,
+        "mixed_infinite_loop1": 9,
+        "mixed_infinite_loop2": 10,
+        "noMatch": 11,
+        "start": 12,
+        "start_loops": 13,
+        "start_loops1": 14,
+        "start_loops2": 15,
+        "accept": 16,
+        "reject": 17
+      },
+      "edges": [
+        {
+          "src": "stateOutOfBound",
+          "dst": "reject",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "finite_loop",
+          "dst": "accept",
+          "condition": "8w2",
+          "transition_type": "select"
+        },
+        {
+          "src": "finite_loop",
+          "dst": "finite_loop1",
+          "condition": "default",
+          "transition_type": "select"
+        },
+        {
+          "src": "finite_loop1",
+          "dst": "accept",
+          "condition": "8w2",
+          "transition_type": "select"
+        },
+        {
+          "src": "finite_loop1",
+          "dst": "finite_loop2",
+          "condition": "default",
+          "transition_type": "select"
+        },
+        {
+          "src": "finite_loop2",
+          "dst": "stateOutOfBound",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "infinite_loop",
+          "dst": "accept",
+          "condition": "8w3",
+          "transition_type": "select"
+        },
+        {
+          "src": "mixed_finite_loop",
+          "dst": "start_loops1",
+          "condition": "8w1",
+          "transition_type": "select"
+        },
+        {
+          "src": "mixed_finite_loop",
+          "dst": "accept",
+          "condition": "8w2",
+          "transition_type": "select"
+        },
+        {
+          "src": "mixed_finite_loop",
+          "dst": "noMatch",
+          "condition": "default",
+          "transition_type": "select"
+        },
+        {
+          "src": "mixed_finite_loop1",
+          "dst": "start_loops2",
+          "condition": "8w1",
+          "transition_type": "select"
+        },
+        {
+          "src": "mixed_finite_loop1",
+          "dst": "accept",
+          "condition": "8w2",
+          "transition_type": "select"
+        },
+        {
+          "src": "mixed_finite_loop1",
+          "dst": "noMatch",
+          "condition": "default",
+          "transition_type": "select"
+        },
+        {
+          "src": "mixed_finite_loop2",
+          "dst": "stateOutOfBound",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "mixed_infinite_loop",
+          "dst": "accept",
+          "condition": "8w3",
+          "transition_type": "select"
+        },
+        {
+          "src": "mixed_infinite_loop1",
+          "dst": "accept",
+          "condition": "8w3",
+          "transition_type": "select"
+        },
+        {
+          "src": "mixed_infinite_loop2",
+          "dst": "accept",
+          "condition": "8w3",
+          "transition_type": "select"
+        },
+        {
+          "src": "noMatch",
+          "dst": "reject",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "start",
+          "dst": "start_loops",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "start_loops",
+          "dst": "mixed_finite_loop",
+          "condition": "8w0",
+          "transition_type": "select"
+        },
+        {
+          "src": "start_loops",
+          "dst": "infinite_loop",
+          "condition": "8w2",
+          "transition_type": "select"
+        },
+        {
+          "src": "start_loops",
+          "dst": "finite_loop",
+          "condition": "8w3",
+          "transition_type": "select"
+        },
+        {
+          "src": "start_loops",
+          "dst": "reject",
+          "condition": "default",
+          "transition_type": "select"
+        },
+        {
+          "src": "start_loops1",
+          "dst": "mixed_finite_loop1",
+          "condition": "8w0",
+          "transition_type": "select"
+        },
+        {
+          "src": "start_loops1",
+          "dst": "infinite_loop",
+          "condition": "8w2",
+          "transition_type": "select"
+        },
+        {
+          "src": "start_loops1",
+          "dst": "finite_loop1",
+          "condition": "8w3",
+          "transition_type": "select"
+        },
+        {
+          "src": "start_loops1",
+          "dst": "reject",
+          "condition": "default",
+          "transition_type": "select"
+        },
+        {
+          "src": "start_loops2",
+          "dst": "mixed_finite_loop2",
+          "condition": "8w0",
+          "transition_type": "select"
+        },
+        {
+          "src": "start_loops2",
+          "dst": "infinite_loop",
+          "condition": "8w2",
+          "transition_type": "select"
+        },
+        {
+          "src": "start_loops2",
+          "dst": "finite_loop2",
+          "condition": "8w3",
+          "transition_type": "select"
+        },
+        {
+          "src": "start_loops2",
+          "dst": "reject",
+          "condition": "default",
+          "transition_type": "select"
+        }
+      ],
+      "sparse_matrix": {
+        "format": "coo",
+        "shape": [
+          18,
+          18
+        ],
+        "rows": [
+          0,
+          1,
+          1,
+          2,
+          2,
+          3,
+          4,
+          5,
+          5,
+          5,
+          6,
+          6,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          13,
+          13,
+          13,
+          14,
+          14,
+          14,
+          14,
+          15,
+          15,
+          15,
+          15
+        ],
+        "cols": [
+          17,
+          16,
+          2,
+          16,
+          3,
+          0,
+          16,
+          14,
+          16,
+          11,
+          15,
+          16,
+          11,
+          0,
+          16,
+          16,
+          16,
+          17,
+          13,
+          5,
+          4,
+          1,
+          17,
+          6,
+          4,
+          2,
+          17,
+          7,
+          4,
+          3,
+          17
+        ],
+        "data": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "entries": [
+          {
+            "row": 0,
+            "col": 17,
+            "value": 1,
+            "src": "stateOutOfBound",
+            "dst": "reject",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 1,
+            "col": 16,
+            "value": 1,
+            "src": "finite_loop",
+            "dst": "accept",
+            "condition": "8w2",
+            "transition_type": "select"
+          },
+          {
+            "row": 1,
+            "col": 2,
+            "value": 1,
+            "src": "finite_loop",
+            "dst": "finite_loop1",
+            "condition": "default",
+            "transition_type": "select"
+          },
+          {
+            "row": 2,
+            "col": 16,
+            "value": 1,
+            "src": "finite_loop1",
+            "dst": "accept",
+            "condition": "8w2",
+            "transition_type": "select"
+          },
+          {
+            "row": 2,
+            "col": 3,
+            "value": 1,
+            "src": "finite_loop1",
+            "dst": "finite_loop2",
+            "condition": "default",
+            "transition_type": "select"
+          },
+          {
+            "row": 3,
+            "col": 0,
+            "value": 1,
+            "src": "finite_loop2",
+            "dst": "stateOutOfBound",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 4,
+            "col": 16,
+            "value": 1,
+            "src": "infinite_loop",
+            "dst": "accept",
+            "condition": "8w3",
+            "transition_type": "select"
+          },
+          {
+            "row": 5,
+            "col": 14,
+            "value": 1,
+            "src": "mixed_finite_loop",
+            "dst": "start_loops1",
+            "condition": "8w1",
+            "transition_type": "select"
+          },
+          {
+            "row": 5,
+            "col": 16,
+            "value": 1,
+            "src": "mixed_finite_loop",
+            "dst": "accept",
+            "condition": "8w2",
+            "transition_type": "select"
+          },
+          {
+            "row": 5,
+            "col": 11,
+            "value": 1,
+            "src": "mixed_finite_loop",
+            "dst": "noMatch",
+            "condition": "default",
+            "transition_type": "select"
+          },
+          {
+            "row": 6,
+            "col": 15,
+            "value": 1,
+            "src": "mixed_finite_loop1",
+            "dst": "start_loops2",
+            "condition": "8w1",
+            "transition_type": "select"
+          },
+          {
+            "row": 6,
+            "col": 16,
+            "value": 1,
+            "src": "mixed_finite_loop1",
+            "dst": "accept",
+            "condition": "8w2",
+            "transition_type": "select"
+          },
+          {
+            "row": 6,
+            "col": 11,
+            "value": 1,
+            "src": "mixed_finite_loop1",
+            "dst": "noMatch",
+            "condition": "default",
+            "transition_type": "select"
+          },
+          {
+            "row": 7,
+            "col": 0,
+            "value": 1,
+            "src": "mixed_finite_loop2",
+            "dst": "stateOutOfBound",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 8,
+            "col": 16,
+            "value": 1,
+            "src": "mixed_infinite_loop",
+            "dst": "accept",
+            "condition": "8w3",
+            "transition_type": "select"
+          },
+          {
+            "row": 9,
+            "col": 16,
+            "value": 1,
+            "src": "mixed_infinite_loop1",
+            "dst": "accept",
+            "condition": "8w3",
+            "transition_type": "select"
+          },
+          {
+            "row": 10,
+            "col": 16,
+            "value": 1,
+            "src": "mixed_infinite_loop2",
+            "dst": "accept",
+            "condition": "8w3",
+            "transition_type": "select"
+          },
+          {
+            "row": 11,
+            "col": 17,
+            "value": 1,
+            "src": "noMatch",
+            "dst": "reject",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 12,
+            "col": 13,
+            "value": 1,
+            "src": "start",
+            "dst": "start_loops",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 13,
+            "col": 5,
+            "value": 1,
+            "src": "start_loops",
+            "dst": "mixed_finite_loop",
+            "condition": "8w0",
+            "transition_type": "select"
+          },
+          {
+            "row": 13,
+            "col": 4,
+            "value": 1,
+            "src": "start_loops",
+            "dst": "infinite_loop",
+            "condition": "8w2",
+            "transition_type": "select"
+          },
+          {
+            "row": 13,
+            "col": 1,
+            "value": 1,
+            "src": "start_loops",
+            "dst": "finite_loop",
+            "condition": "8w3",
+            "transition_type": "select"
+          },
+          {
+            "row": 13,
+            "col": 17,
+            "value": 1,
+            "src": "start_loops",
+            "dst": "reject",
+            "condition": "default",
+            "transition_type": "select"
+          },
+          {
+            "row": 14,
+            "col": 6,
+            "value": 1,
+            "src": "start_loops1",
+            "dst": "mixed_finite_loop1",
+            "condition": "8w0",
+            "transition_type": "select"
+          },
+          {
+            "row": 14,
+            "col": 4,
+            "value": 1,
+            "src": "start_loops1",
+            "dst": "infinite_loop",
+            "condition": "8w2",
+            "transition_type": "select"
+          },
+          {
+            "row": 14,
+            "col": 2,
+            "value": 1,
+            "src": "start_loops1",
+            "dst": "finite_loop1",
+            "condition": "8w3",
+            "transition_type": "select"
+          },
+          {
+            "row": 14,
+            "col": 17,
+            "value": 1,
+            "src": "start_loops1",
+            "dst": "reject",
+            "condition": "default",
+            "transition_type": "select"
+          },
+          {
+            "row": 15,
+            "col": 7,
+            "value": 1,
+            "src": "start_loops2",
+            "dst": "mixed_finite_loop2",
+            "condition": "8w0",
+            "transition_type": "select"
+          },
+          {
+            "row": 15,
+            "col": 4,
+            "value": 1,
+            "src": "start_loops2",
+            "dst": "infinite_loop",
+            "condition": "8w2",
+            "transition_type": "select"
+          },
+          {
+            "row": 15,
+            "col": 3,
+            "value": 1,
+            "src": "start_loops2",
+            "dst": "finite_loop2",
+            "condition": "8w3",
+            "transition_type": "select"
+          },
+          {
+            "row": 15,
+            "col": 17,
+            "value": 1,
+            "src": "start_loops2",
+            "dst": "reject",
+            "condition": "default",
+            "transition_type": "select"
+          }
+        ]
+      }
+    }
+  ]
+}

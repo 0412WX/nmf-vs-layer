@@ -1,0 +1,582 @@
+{
+  "source_file": "/home/npu_workspace/LLM_parser/HyperParser/input_files/P4_code/p4_16_samples_outputs/issue1897-bmv2-midend.p4",
+  "source_relative_path": "p4_16_samples_outputs/issue1897-bmv2-midend.p4",
+  "num_parsers": 1,
+  "parsers": [
+    {
+      "parser_name": "ProtParser",
+      "num_nodes": 22,
+      "num_edges": 28,
+      "start_state": "start",
+      "nodes": [
+        "start",
+        "ProtAddrParser_ipv4",
+        "ProtAddrParser_ipv6",
+        "start_0",
+        "start_0_true",
+        "start_0_false",
+        "start_0_join",
+        "start_0_true_0",
+        "start_0_false_0",
+        "start_0_join_0",
+        "ProtAddrParser_ipv4_0",
+        "ProtAddrParser_ipv6_0",
+        "start_1",
+        "start_1_true",
+        "start_1_false",
+        "start_1_join",
+        "start_1_true_0",
+        "start_1_false_0",
+        "start_1_join_0",
+        "noMatch",
+        "accept",
+        "reject"
+      ],
+      "node_to_index": {
+        "start": 0,
+        "ProtAddrParser_ipv4": 1,
+        "ProtAddrParser_ipv6": 2,
+        "start_0": 3,
+        "start_0_true": 4,
+        "start_0_false": 5,
+        "start_0_join": 6,
+        "start_0_true_0": 7,
+        "start_0_false_0": 8,
+        "start_0_join_0": 9,
+        "ProtAddrParser_ipv4_0": 10,
+        "ProtAddrParser_ipv6_0": 11,
+        "start_1": 12,
+        "start_1_true": 13,
+        "start_1_false": 14,
+        "start_1_join": 15,
+        "start_1_true_0": 16,
+        "start_1_false_0": 17,
+        "start_1_join_0": 18,
+        "noMatch": 19,
+        "accept": 20,
+        "reject": 21
+      },
+      "edges": [
+        {
+          "src": "start",
+          "dst": "ProtAddrParser_ipv4",
+          "condition": "8w0x1",
+          "transition_type": "select"
+        },
+        {
+          "src": "start",
+          "dst": "ProtAddrParser_ipv6",
+          "condition": "8w0x2",
+          "transition_type": "select"
+        },
+        {
+          "src": "start",
+          "dst": "noMatch",
+          "condition": "default",
+          "transition_type": "select"
+        },
+        {
+          "src": "ProtAddrParser_ipv4",
+          "dst": "start_0",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "ProtAddrParser_ipv6",
+          "dst": "start_0",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "start_0",
+          "dst": "start_0_true",
+          "condition": "true",
+          "transition_type": "select"
+        },
+        {
+          "src": "start_0",
+          "dst": "start_0_false",
+          "condition": "false",
+          "transition_type": "select"
+        },
+        {
+          "src": "start_0_true",
+          "dst": "start_0_join",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "start_0_false",
+          "dst": "start_0_join",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "start_0_join",
+          "dst": "start_0_true_0",
+          "condition": "true",
+          "transition_type": "select"
+        },
+        {
+          "src": "start_0_join",
+          "dst": "start_0_false_0",
+          "condition": "false",
+          "transition_type": "select"
+        },
+        {
+          "src": "start_0_true_0",
+          "dst": "start_0_join_0",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "start_0_false_0",
+          "dst": "start_0_join_0",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "start_0_join_0",
+          "dst": "ProtAddrParser_ipv4_0",
+          "condition": "8w0x1",
+          "transition_type": "select"
+        },
+        {
+          "src": "start_0_join_0",
+          "dst": "ProtAddrParser_ipv6_0",
+          "condition": "8w0x2",
+          "transition_type": "select"
+        },
+        {
+          "src": "start_0_join_0",
+          "dst": "noMatch",
+          "condition": "default",
+          "transition_type": "select"
+        },
+        {
+          "src": "ProtAddrParser_ipv4_0",
+          "dst": "start_1",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "ProtAddrParser_ipv6_0",
+          "dst": "start_1",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "start_1",
+          "dst": "start_1_true",
+          "condition": "true",
+          "transition_type": "select"
+        },
+        {
+          "src": "start_1",
+          "dst": "start_1_false",
+          "condition": "false",
+          "transition_type": "select"
+        },
+        {
+          "src": "start_1_true",
+          "dst": "start_1_join",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "start_1_false",
+          "dst": "start_1_join",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "start_1_join",
+          "dst": "start_1_true_0",
+          "condition": "true",
+          "transition_type": "select"
+        },
+        {
+          "src": "start_1_join",
+          "dst": "start_1_false_0",
+          "condition": "false",
+          "transition_type": "select"
+        },
+        {
+          "src": "start_1_true_0",
+          "dst": "start_1_join_0",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "start_1_false_0",
+          "dst": "start_1_join_0",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "start_1_join_0",
+          "dst": "accept",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "noMatch",
+          "dst": "reject",
+          "condition": "always",
+          "transition_type": "direct"
+        }
+      ],
+      "sparse_matrix": {
+        "format": "coo",
+        "shape": [
+          22,
+          22
+        ],
+        "rows": [
+          0,
+          0,
+          0,
+          1,
+          2,
+          3,
+          3,
+          4,
+          5,
+          6,
+          6,
+          7,
+          8,
+          9,
+          9,
+          9,
+          10,
+          11,
+          12,
+          12,
+          13,
+          14,
+          15,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "cols": [
+          1,
+          2,
+          19,
+          3,
+          3,
+          4,
+          5,
+          6,
+          6,
+          7,
+          8,
+          9,
+          9,
+          10,
+          11,
+          19,
+          12,
+          12,
+          13,
+          14,
+          15,
+          15,
+          16,
+          17,
+          18,
+          18,
+          20,
+          21
+        ],
+        "data": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "entries": [
+          {
+            "row": 0,
+            "col": 1,
+            "value": 1,
+            "src": "start",
+            "dst": "ProtAddrParser_ipv4",
+            "condition": "8w0x1",
+            "transition_type": "select"
+          },
+          {
+            "row": 0,
+            "col": 2,
+            "value": 1,
+            "src": "start",
+            "dst": "ProtAddrParser_ipv6",
+            "condition": "8w0x2",
+            "transition_type": "select"
+          },
+          {
+            "row": 0,
+            "col": 19,
+            "value": 1,
+            "src": "start",
+            "dst": "noMatch",
+            "condition": "default",
+            "transition_type": "select"
+          },
+          {
+            "row": 1,
+            "col": 3,
+            "value": 1,
+            "src": "ProtAddrParser_ipv4",
+            "dst": "start_0",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 2,
+            "col": 3,
+            "value": 1,
+            "src": "ProtAddrParser_ipv6",
+            "dst": "start_0",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 3,
+            "col": 4,
+            "value": 1,
+            "src": "start_0",
+            "dst": "start_0_true",
+            "condition": "true",
+            "transition_type": "select"
+          },
+          {
+            "row": 3,
+            "col": 5,
+            "value": 1,
+            "src": "start_0",
+            "dst": "start_0_false",
+            "condition": "false",
+            "transition_type": "select"
+          },
+          {
+            "row": 4,
+            "col": 6,
+            "value": 1,
+            "src": "start_0_true",
+            "dst": "start_0_join",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 5,
+            "col": 6,
+            "value": 1,
+            "src": "start_0_false",
+            "dst": "start_0_join",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 6,
+            "col": 7,
+            "value": 1,
+            "src": "start_0_join",
+            "dst": "start_0_true_0",
+            "condition": "true",
+            "transition_type": "select"
+          },
+          {
+            "row": 6,
+            "col": 8,
+            "value": 1,
+            "src": "start_0_join",
+            "dst": "start_0_false_0",
+            "condition": "false",
+            "transition_type": "select"
+          },
+          {
+            "row": 7,
+            "col": 9,
+            "value": 1,
+            "src": "start_0_true_0",
+            "dst": "start_0_join_0",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 8,
+            "col": 9,
+            "value": 1,
+            "src": "start_0_false_0",
+            "dst": "start_0_join_0",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 9,
+            "col": 10,
+            "value": 1,
+            "src": "start_0_join_0",
+            "dst": "ProtAddrParser_ipv4_0",
+            "condition": "8w0x1",
+            "transition_type": "select"
+          },
+          {
+            "row": 9,
+            "col": 11,
+            "value": 1,
+            "src": "start_0_join_0",
+            "dst": "ProtAddrParser_ipv6_0",
+            "condition": "8w0x2",
+            "transition_type": "select"
+          },
+          {
+            "row": 9,
+            "col": 19,
+            "value": 1,
+            "src": "start_0_join_0",
+            "dst": "noMatch",
+            "condition": "default",
+            "transition_type": "select"
+          },
+          {
+            "row": 10,
+            "col": 12,
+            "value": 1,
+            "src": "ProtAddrParser_ipv4_0",
+            "dst": "start_1",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 11,
+            "col": 12,
+            "value": 1,
+            "src": "ProtAddrParser_ipv6_0",
+            "dst": "start_1",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 12,
+            "col": 13,
+            "value": 1,
+            "src": "start_1",
+            "dst": "start_1_true",
+            "condition": "true",
+            "transition_type": "select"
+          },
+          {
+            "row": 12,
+            "col": 14,
+            "value": 1,
+            "src": "start_1",
+            "dst": "start_1_false",
+            "condition": "false",
+            "transition_type": "select"
+          },
+          {
+            "row": 13,
+            "col": 15,
+            "value": 1,
+            "src": "start_1_true",
+            "dst": "start_1_join",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 14,
+            "col": 15,
+            "value": 1,
+            "src": "start_1_false",
+            "dst": "start_1_join",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 15,
+            "col": 16,
+            "value": 1,
+            "src": "start_1_join",
+            "dst": "start_1_true_0",
+            "condition": "true",
+            "transition_type": "select"
+          },
+          {
+            "row": 15,
+            "col": 17,
+            "value": 1,
+            "src": "start_1_join",
+            "dst": "start_1_false_0",
+            "condition": "false",
+            "transition_type": "select"
+          },
+          {
+            "row": 16,
+            "col": 18,
+            "value": 1,
+            "src": "start_1_true_0",
+            "dst": "start_1_join_0",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 17,
+            "col": 18,
+            "value": 1,
+            "src": "start_1_false_0",
+            "dst": "start_1_join_0",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 18,
+            "col": 20,
+            "value": 1,
+            "src": "start_1_join_0",
+            "dst": "accept",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 19,
+            "col": 21,
+            "value": 1,
+            "src": "noMatch",
+            "dst": "reject",
+            "condition": "always",
+            "transition_type": "direct"
+          }
+        ]
+      }
+    }
+  ]
+}

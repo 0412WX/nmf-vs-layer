@@ -1,0 +1,3011 @@
+{
+  "source_json": "C:\\Users\\DELL\\Desktop\\666\\SpMM_Parser-master\\nmf vs layer\\p4_16_samples_outputs__parser-unroll-test9-midend.p4.json",
+  "created_at": "2026-04-13T15:22:24",
+  "algorithm": "NMF-DAG-Partition",
+  "config": {
+    "k_min": 2,
+    "k_max": 10,
+    "n_restarts": 10,
+    "max_paths": 0,
+    "max_iter": 500,
+    "tol": 0.0001,
+    "seed": 0,
+    "max_segment_nodes": 6,
+    "weights": {
+      "w1": 0.3,
+      "w2": 0.5,
+      "w3": 0.2
+    }
+  },
+  "num_parsers": 1,
+  "parser_results": [
+    {
+      "parser_name": "p",
+      "status": "ok",
+      "path_truncated": false,
+      "start_state": "start",
+      "num_nodes": 18,
+      "num_edges": 31,
+      "original_path_count": 17,
+      "unique_node_path_count": 17,
+      "duplicate_node_path_count": 0,
+      "total_unique_segment_count": 21,
+      "total_segment_instance_count": 33,
+      "virtual_node_count": 30,
+      "matrix_shape": [
+        17,
+        30
+      ],
+      "matrix_nnz": 103,
+      "matrix_density": 0.2019607843137255,
+      "best_requested_k": 2,
+      "best_actual_k": 2,
+      "best_cut_points": [
+        0,
+        3,
+        8
+      ],
+      "best_metrics": {
+        "score": 0.3,
+        "e_recon": 0.5720288813522117,
+        "e_dup": 0.9354838709677419,
+        "e_bal": 0.3333333333333333,
+        "norm": {
+          "e_recon_norm": 1.0,
+          "e_dup_norm": 0.0,
+          "e_bal_norm": 0.0
+        }
+      },
+      "weights": {
+        "w1": 0.3,
+        "w2": 0.5,
+        "w3": 0.2
+      },
+      "candidates": [
+        {
+          "k": 2,
+          "requested_k": 2,
+          "actual_k": 2,
+          "cut_points": [
+            0,
+            3,
+            8
+          ],
+          "e_recon": 0.5720288813522117,
+          "e_dup": 0.9354838709677419,
+          "e_bal": 0.3333333333333333,
+          "score": 0.3,
+          "norm": {
+            "e_recon_norm": 1.0,
+            "e_dup_norm": 0.0,
+            "e_bal_norm": 0.0
+          }
+        },
+        {
+          "k": 3,
+          "requested_k": 3,
+          "actual_k": 3,
+          "cut_points": [
+            0,
+            1,
+            3,
+            8
+          ],
+          "e_recon": 0.5053459049168362,
+          "e_dup": 0.9354838709677419,
+          "e_bal": 0.7244262477504195,
+          "score": 0.34320367760016335,
+          "norm": {
+            "e_recon_norm": 0.7575386240690832,
+            "e_dup_norm": 0.0,
+            "e_bal_norm": 0.5797104518971921
+          }
+        },
+        {
+          "k": 4,
+          "requested_k": 4,
+          "actual_k": 4,
+          "cut_points": [
+            0,
+            1,
+            2,
+            7,
+            8
+          ],
+          "e_recon": 0.46116773120248256,
+          "e_dup": 0.9354838709677419,
+          "e_bal": 1.007968253468332,
+          "score": 0.37907162319619736,
+          "norm": {
+            "e_recon_norm": 0.5969054106539912,
+            "e_dup_norm": 0.0,
+            "e_bal_norm": 1.0
+          }
+        },
+        {
+          "k": 5,
+          "requested_k": 5,
+          "actual_k": 5,
+          "cut_points": [
+            0,
+            1,
+            2,
+            3,
+            7,
+            8
+          ],
+          "e_recon": 0.4209914334717424,
+          "e_dup": 0.967741935483871,
+          "e_bal": 0.7817782102589402,
+          "score": 0.33069140316984147,
+          "norm": {
+            "e_recon_norm": 0.45082314275993707,
+            "e_dup_norm": 0.12500000000000028,
+            "e_bal_norm": 0.664722301709301
+          }
+        },
+        {
+          "k": 6,
+          "requested_k": 6,
+          "actual_k": 6,
+          "cut_points": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            7,
+            8
+          ],
+          "e_recon": 0.37916578023214687,
+          "e_dup": 1.064516129032258,
+          "e_bal": 0.5911691541835817,
+          "score": 0.4160602705742575,
+          "norm": {
+            "e_recon_norm": 0.2987437669463847,
+            "e_dup_norm": 0.4999999999999998,
+            "e_bal_norm": 0.3821857024517109
+          }
+        },
+        {
+          "k": 7,
+          "requested_k": 7,
+          "actual_k": 7,
+          "cut_points": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            8
+          ],
+          "e_recon": 0.33474361776542577,
+          "e_dup": 1.1290322580645162,
+          "e_bal": 0.5582446424891601,
+          "score": 0.48284347131243505,
+          "norm": {
+            "e_recon_norm": 0.13722340284047102,
+            "e_dup_norm": 0.7500000000000003,
+            "e_bal_norm": 0.3333822523014678
+          }
+        },
+        {
+          "k": 8,
+          "requested_k": 8,
+          "actual_k": 8,
+          "cut_points": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "e_recon": 0.2970037307303857,
+          "e_dup": 1.1935483870967742,
+          "e_bal": 0.46983054470813274,
+          "score": 0.5404655043197246,
+          "norm": {
+            "e_recon_norm": 0.0,
+            "e_dup_norm": 1.0,
+            "e_bal_norm": 0.20232752159862322
+          }
+        }
+      ],
+      "subgraphs": [
+        {
+          "subgraph_id": 1,
+          "layer_start": 0,
+          "layer_end": 3,
+          "num_unique_segments": 7,
+          "num_segment_instances": 17,
+          "num_nodes": 10,
+          "num_edges": 11,
+          "nodes": [
+            "accept",
+            "finite_loop",
+            "finite_loop1",
+            "infinite_loop",
+            "mixed_finite_loop",
+            "noMatch",
+            "reject",
+            "start",
+            "start_loops",
+            "start_loops1"
+          ],
+          "edges": [
+            {
+              "src": "finite_loop",
+              "dst": "accept",
+              "condition": "8w2"
+            },
+            {
+              "src": "finite_loop",
+              "dst": "finite_loop1",
+              "condition": "default"
+            },
+            {
+              "src": "infinite_loop",
+              "dst": "accept",
+              "condition": "8w3"
+            },
+            {
+              "src": "mixed_finite_loop",
+              "dst": "accept",
+              "condition": "8w2"
+            },
+            {
+              "src": "mixed_finite_loop",
+              "dst": "noMatch",
+              "condition": "default"
+            },
+            {
+              "src": "mixed_finite_loop",
+              "dst": "start_loops1",
+              "condition": "8w1"
+            },
+            {
+              "src": "start",
+              "dst": "start_loops",
+              "condition": "always"
+            },
+            {
+              "src": "start_loops",
+              "dst": "finite_loop",
+              "condition": "8w3"
+            },
+            {
+              "src": "start_loops",
+              "dst": "infinite_loop",
+              "condition": "8w2"
+            },
+            {
+              "src": "start_loops",
+              "dst": "mixed_finite_loop",
+              "condition": "8w0"
+            },
+            {
+              "src": "start_loops",
+              "dst": "reject",
+              "condition": "default"
+            }
+          ],
+          "segments": [
+            {
+              "segment_id": "sg1_seg_001",
+              "usage_count": 10,
+              "depth_nodes": 4,
+              "depth_edges": 3,
+              "start_node": "start",
+              "end_node": "start_loops1",
+              "path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1",
+              "nodes": [
+                "start",
+                "start_loops",
+                "mixed_finite_loop",
+                "start_loops1"
+              ],
+              "transitions": [
+                {
+                  "src": "start",
+                  "dst": "start_loops",
+                  "condition": "always"
+                },
+                {
+                  "src": "start_loops",
+                  "dst": "mixed_finite_loop",
+                  "condition": "8w0"
+                },
+                {
+                  "src": "mixed_finite_loop",
+                  "dst": "start_loops1",
+                  "condition": "8w1"
+                }
+              ]
+            },
+            {
+              "segment_id": "sg1_seg_002",
+              "usage_count": 1,
+              "depth_nodes": 4,
+              "depth_edges": 3,
+              "start_node": "start",
+              "end_node": "accept",
+              "path_str": "start -> start_loops -> mixed_finite_loop -> accept",
+              "nodes": [
+                "start",
+                "start_loops",
+                "mixed_finite_loop",
+                "accept"
+              ],
+              "transitions": [
+                {
+                  "src": "start",
+                  "dst": "start_loops",
+                  "condition": "always"
+                },
+                {
+                  "src": "start_loops",
+                  "dst": "mixed_finite_loop",
+                  "condition": "8w0"
+                },
+                {
+                  "src": "mixed_finite_loop",
+                  "dst": "accept",
+                  "condition": "8w2"
+                }
+              ]
+            },
+            {
+              "segment_id": "sg1_seg_003",
+              "usage_count": 1,
+              "depth_nodes": 4,
+              "depth_edges": 3,
+              "start_node": "start",
+              "end_node": "noMatch",
+              "path_str": "start -> start_loops -> mixed_finite_loop -> noMatch",
+              "nodes": [
+                "start",
+                "start_loops",
+                "mixed_finite_loop",
+                "noMatch"
+              ],
+              "transitions": [
+                {
+                  "src": "start",
+                  "dst": "start_loops",
+                  "condition": "always"
+                },
+                {
+                  "src": "start_loops",
+                  "dst": "mixed_finite_loop",
+                  "condition": "8w0"
+                },
+                {
+                  "src": "mixed_finite_loop",
+                  "dst": "noMatch",
+                  "condition": "default"
+                }
+              ]
+            },
+            {
+              "segment_id": "sg1_seg_004",
+              "usage_count": 1,
+              "depth_nodes": 4,
+              "depth_edges": 3,
+              "start_node": "start",
+              "end_node": "accept",
+              "path_str": "start -> start_loops -> infinite_loop -> accept",
+              "nodes": [
+                "start",
+                "start_loops",
+                "infinite_loop",
+                "accept"
+              ],
+              "transitions": [
+                {
+                  "src": "start",
+                  "dst": "start_loops",
+                  "condition": "always"
+                },
+                {
+                  "src": "start_loops",
+                  "dst": "infinite_loop",
+                  "condition": "8w2"
+                },
+                {
+                  "src": "infinite_loop",
+                  "dst": "accept",
+                  "condition": "8w3"
+                }
+              ]
+            },
+            {
+              "segment_id": "sg1_seg_005",
+              "usage_count": 1,
+              "depth_nodes": 4,
+              "depth_edges": 3,
+              "start_node": "start",
+              "end_node": "accept",
+              "path_str": "start -> start_loops -> finite_loop -> accept",
+              "nodes": [
+                "start",
+                "start_loops",
+                "finite_loop",
+                "accept"
+              ],
+              "transitions": [
+                {
+                  "src": "start",
+                  "dst": "start_loops",
+                  "condition": "always"
+                },
+                {
+                  "src": "start_loops",
+                  "dst": "finite_loop",
+                  "condition": "8w3"
+                },
+                {
+                  "src": "finite_loop",
+                  "dst": "accept",
+                  "condition": "8w2"
+                }
+              ]
+            },
+            {
+              "segment_id": "sg1_seg_006",
+              "usage_count": 2,
+              "depth_nodes": 4,
+              "depth_edges": 3,
+              "start_node": "start",
+              "end_node": "finite_loop1",
+              "path_str": "start -> start_loops -> finite_loop -> finite_loop1",
+              "nodes": [
+                "start",
+                "start_loops",
+                "finite_loop",
+                "finite_loop1"
+              ],
+              "transitions": [
+                {
+                  "src": "start",
+                  "dst": "start_loops",
+                  "condition": "always"
+                },
+                {
+                  "src": "start_loops",
+                  "dst": "finite_loop",
+                  "condition": "8w3"
+                },
+                {
+                  "src": "finite_loop",
+                  "dst": "finite_loop1",
+                  "condition": "default"
+                }
+              ]
+            },
+            {
+              "segment_id": "sg1_seg_007",
+              "usage_count": 1,
+              "depth_nodes": 3,
+              "depth_edges": 2,
+              "start_node": "start",
+              "end_node": "reject",
+              "path_str": "start -> start_loops -> reject",
+              "nodes": [
+                "start",
+                "start_loops",
+                "reject"
+              ],
+              "transitions": [
+                {
+                  "src": "start",
+                  "dst": "start_loops",
+                  "condition": "always"
+                },
+                {
+                  "src": "start_loops",
+                  "dst": "reject",
+                  "condition": "default"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subgraph_id": 2,
+          "layer_start": 3,
+          "layer_end": 8,
+          "num_unique_segments": 14,
+          "num_segment_instances": 16,
+          "num_nodes": 11,
+          "num_edges": 18,
+          "nodes": [
+            "accept",
+            "finite_loop1",
+            "finite_loop2",
+            "infinite_loop",
+            "mixed_finite_loop1",
+            "mixed_finite_loop2",
+            "noMatch",
+            "reject",
+            "start_loops1",
+            "start_loops2",
+            "stateOutOfBound"
+          ],
+          "edges": [
+            {
+              "src": "finite_loop1",
+              "dst": "accept",
+              "condition": "8w2"
+            },
+            {
+              "src": "finite_loop1",
+              "dst": "finite_loop2",
+              "condition": "default"
+            },
+            {
+              "src": "finite_loop2",
+              "dst": "stateOutOfBound",
+              "condition": "always"
+            },
+            {
+              "src": "infinite_loop",
+              "dst": "accept",
+              "condition": "8w3"
+            },
+            {
+              "src": "mixed_finite_loop1",
+              "dst": "accept",
+              "condition": "8w2"
+            },
+            {
+              "src": "mixed_finite_loop1",
+              "dst": "noMatch",
+              "condition": "default"
+            },
+            {
+              "src": "mixed_finite_loop1",
+              "dst": "start_loops2",
+              "condition": "8w1"
+            },
+            {
+              "src": "mixed_finite_loop2",
+              "dst": "stateOutOfBound",
+              "condition": "always"
+            },
+            {
+              "src": "noMatch",
+              "dst": "reject",
+              "condition": "always"
+            },
+            {
+              "src": "start_loops1",
+              "dst": "finite_loop1",
+              "condition": "8w3"
+            },
+            {
+              "src": "start_loops1",
+              "dst": "infinite_loop",
+              "condition": "8w2"
+            },
+            {
+              "src": "start_loops1",
+              "dst": "mixed_finite_loop1",
+              "condition": "8w0"
+            },
+            {
+              "src": "start_loops1",
+              "dst": "reject",
+              "condition": "default"
+            },
+            {
+              "src": "start_loops2",
+              "dst": "finite_loop2",
+              "condition": "8w3"
+            },
+            {
+              "src": "start_loops2",
+              "dst": "infinite_loop",
+              "condition": "8w2"
+            },
+            {
+              "src": "start_loops2",
+              "dst": "mixed_finite_loop2",
+              "condition": "8w0"
+            },
+            {
+              "src": "start_loops2",
+              "dst": "reject",
+              "condition": "default"
+            },
+            {
+              "src": "stateOutOfBound",
+              "dst": "reject",
+              "condition": "always"
+            }
+          ],
+          "segments": [
+            {
+              "segment_id": "sg2_seg_001",
+              "usage_count": 3,
+              "depth_nodes": 1,
+              "depth_edges": 0,
+              "start_node": "accept",
+              "end_node": "accept",
+              "path_str": "accept",
+              "nodes": [
+                "accept"
+              ],
+              "transitions": []
+            },
+            {
+              "segment_id": "sg2_seg_002",
+              "usage_count": 1,
+              "depth_nodes": 2,
+              "depth_edges": 1,
+              "start_node": "noMatch",
+              "end_node": "reject",
+              "path_str": "noMatch -> reject",
+              "nodes": [
+                "noMatch",
+                "reject"
+              ],
+              "transitions": [
+                {
+                  "src": "noMatch",
+                  "dst": "reject",
+                  "condition": "always"
+                }
+              ]
+            },
+            {
+              "segment_id": "sg2_seg_003",
+              "usage_count": 1,
+              "depth_nodes": 2,
+              "depth_edges": 1,
+              "start_node": "finite_loop1",
+              "end_node": "accept",
+              "path_str": "finite_loop1 -> accept",
+              "nodes": [
+                "finite_loop1",
+                "accept"
+              ],
+              "transitions": [
+                {
+                  "src": "finite_loop1",
+                  "dst": "accept",
+                  "condition": "8w2"
+                }
+              ]
+            },
+            {
+              "segment_id": "sg2_seg_004",
+              "usage_count": 1,
+              "depth_nodes": 4,
+              "depth_edges": 3,
+              "start_node": "finite_loop1",
+              "end_node": "reject",
+              "path_str": "finite_loop1 -> finite_loop2 -> stateOutOfBound -> reject",
+              "nodes": [
+                "finite_loop1",
+                "finite_loop2",
+                "stateOutOfBound",
+                "reject"
+              ],
+              "transitions": [
+                {
+                  "src": "finite_loop1",
+                  "dst": "finite_loop2",
+                  "condition": "default"
+                },
+                {
+                  "src": "finite_loop2",
+                  "dst": "stateOutOfBound",
+                  "condition": "always"
+                },
+                {
+                  "src": "stateOutOfBound",
+                  "dst": "reject",
+                  "condition": "always"
+                }
+              ]
+            },
+            {
+              "segment_id": "sg2_seg_005",
+              "usage_count": 1,
+              "depth_nodes": 6,
+              "depth_edges": 5,
+              "start_node": "start_loops1",
+              "end_node": "reject",
+              "path_str": "start_loops1 -> mixed_finite_loop1 -> start_loops2 -> mixed_finite_loop2 -> stateOutOfBound -> reject",
+              "nodes": [
+                "start_loops1",
+                "mixed_finite_loop1",
+                "start_loops2",
+                "mixed_finite_loop2",
+                "stateOutOfBound",
+                "reject"
+              ],
+              "transitions": [
+                {
+                  "src": "start_loops1",
+                  "dst": "mixed_finite_loop1",
+                  "condition": "8w0"
+                },
+                {
+                  "src": "mixed_finite_loop1",
+                  "dst": "start_loops2",
+                  "condition": "8w1"
+                },
+                {
+                  "src": "start_loops2",
+                  "dst": "mixed_finite_loop2",
+                  "condition": "8w0"
+                },
+                {
+                  "src": "mixed_finite_loop2",
+                  "dst": "stateOutOfBound",
+                  "condition": "always"
+                },
+                {
+                  "src": "stateOutOfBound",
+                  "dst": "reject",
+                  "condition": "always"
+                }
+              ]
+            },
+            {
+              "segment_id": "sg2_seg_006",
+              "usage_count": 1,
+              "depth_nodes": 5,
+              "depth_edges": 4,
+              "start_node": "start_loops1",
+              "end_node": "accept",
+              "path_str": "start_loops1 -> mixed_finite_loop1 -> start_loops2 -> infinite_loop -> accept",
+              "nodes": [
+                "start_loops1",
+                "mixed_finite_loop1",
+                "start_loops2",
+                "infinite_loop",
+                "accept"
+              ],
+              "transitions": [
+                {
+                  "src": "start_loops1",
+                  "dst": "mixed_finite_loop1",
+                  "condition": "8w0"
+                },
+                {
+                  "src": "mixed_finite_loop1",
+                  "dst": "start_loops2",
+                  "condition": "8w1"
+                },
+                {
+                  "src": "start_loops2",
+                  "dst": "infinite_loop",
+                  "condition": "8w2"
+                },
+                {
+                  "src": "infinite_loop",
+                  "dst": "accept",
+                  "condition": "8w3"
+                }
+              ]
+            },
+            {
+              "segment_id": "sg2_seg_007",
+              "usage_count": 1,
+              "depth_nodes": 6,
+              "depth_edges": 5,
+              "start_node": "start_loops1",
+              "end_node": "reject",
+              "path_str": "start_loops1 -> mixed_finite_loop1 -> start_loops2 -> finite_loop2 -> stateOutOfBound -> reject",
+              "nodes": [
+                "start_loops1",
+                "mixed_finite_loop1",
+                "start_loops2",
+                "finite_loop2",
+                "stateOutOfBound",
+                "reject"
+              ],
+              "transitions": [
+                {
+                  "src": "start_loops1",
+                  "dst": "mixed_finite_loop1",
+                  "condition": "8w0"
+                },
+                {
+                  "src": "mixed_finite_loop1",
+                  "dst": "start_loops2",
+                  "condition": "8w1"
+                },
+                {
+                  "src": "start_loops2",
+                  "dst": "finite_loop2",
+                  "condition": "8w3"
+                },
+                {
+                  "src": "finite_loop2",
+                  "dst": "stateOutOfBound",
+                  "condition": "always"
+                },
+                {
+                  "src": "stateOutOfBound",
+                  "dst": "reject",
+                  "condition": "always"
+                }
+              ]
+            },
+            {
+              "segment_id": "sg2_seg_008",
+              "usage_count": 1,
+              "depth_nodes": 4,
+              "depth_edges": 3,
+              "start_node": "start_loops1",
+              "end_node": "reject",
+              "path_str": "start_loops1 -> mixed_finite_loop1 -> start_loops2 -> reject",
+              "nodes": [
+                "start_loops1",
+                "mixed_finite_loop1",
+                "start_loops2",
+                "reject"
+              ],
+              "transitions": [
+                {
+                  "src": "start_loops1",
+                  "dst": "mixed_finite_loop1",
+                  "condition": "8w0"
+                },
+                {
+                  "src": "mixed_finite_loop1",
+                  "dst": "start_loops2",
+                  "condition": "8w1"
+                },
+                {
+                  "src": "start_loops2",
+                  "dst": "reject",
+                  "condition": "default"
+                }
+              ]
+            },
+            {
+              "segment_id": "sg2_seg_009",
+              "usage_count": 1,
+              "depth_nodes": 3,
+              "depth_edges": 2,
+              "start_node": "start_loops1",
+              "end_node": "accept",
+              "path_str": "start_loops1 -> mixed_finite_loop1 -> accept",
+              "nodes": [
+                "start_loops1",
+                "mixed_finite_loop1",
+                "accept"
+              ],
+              "transitions": [
+                {
+                  "src": "start_loops1",
+                  "dst": "mixed_finite_loop1",
+                  "condition": "8w0"
+                },
+                {
+                  "src": "mixed_finite_loop1",
+                  "dst": "accept",
+                  "condition": "8w2"
+                }
+              ]
+            },
+            {
+              "segment_id": "sg2_seg_010",
+              "usage_count": 1,
+              "depth_nodes": 4,
+              "depth_edges": 3,
+              "start_node": "start_loops1",
+              "end_node": "reject",
+              "path_str": "start_loops1 -> mixed_finite_loop1 -> noMatch -> reject",
+              "nodes": [
+                "start_loops1",
+                "mixed_finite_loop1",
+                "noMatch",
+                "reject"
+              ],
+              "transitions": [
+                {
+                  "src": "start_loops1",
+                  "dst": "mixed_finite_loop1",
+                  "condition": "8w0"
+                },
+                {
+                  "src": "mixed_finite_loop1",
+                  "dst": "noMatch",
+                  "condition": "default"
+                },
+                {
+                  "src": "noMatch",
+                  "dst": "reject",
+                  "condition": "always"
+                }
+              ]
+            },
+            {
+              "segment_id": "sg2_seg_011",
+              "usage_count": 1,
+              "depth_nodes": 3,
+              "depth_edges": 2,
+              "start_node": "start_loops1",
+              "end_node": "accept",
+              "path_str": "start_loops1 -> infinite_loop -> accept",
+              "nodes": [
+                "start_loops1",
+                "infinite_loop",
+                "accept"
+              ],
+              "transitions": [
+                {
+                  "src": "start_loops1",
+                  "dst": "infinite_loop",
+                  "condition": "8w2"
+                },
+                {
+                  "src": "infinite_loop",
+                  "dst": "accept",
+                  "condition": "8w3"
+                }
+              ]
+            },
+            {
+              "segment_id": "sg2_seg_012",
+              "usage_count": 1,
+              "depth_nodes": 3,
+              "depth_edges": 2,
+              "start_node": "start_loops1",
+              "end_node": "accept",
+              "path_str": "start_loops1 -> finite_loop1 -> accept",
+              "nodes": [
+                "start_loops1",
+                "finite_loop1",
+                "accept"
+              ],
+              "transitions": [
+                {
+                  "src": "start_loops1",
+                  "dst": "finite_loop1",
+                  "condition": "8w3"
+                },
+                {
+                  "src": "finite_loop1",
+                  "dst": "accept",
+                  "condition": "8w2"
+                }
+              ]
+            },
+            {
+              "segment_id": "sg2_seg_013",
+              "usage_count": 1,
+              "depth_nodes": 5,
+              "depth_edges": 4,
+              "start_node": "start_loops1",
+              "end_node": "reject",
+              "path_str": "start_loops1 -> finite_loop1 -> finite_loop2 -> stateOutOfBound -> reject",
+              "nodes": [
+                "start_loops1",
+                "finite_loop1",
+                "finite_loop2",
+                "stateOutOfBound",
+                "reject"
+              ],
+              "transitions": [
+                {
+                  "src": "start_loops1",
+                  "dst": "finite_loop1",
+                  "condition": "8w3"
+                },
+                {
+                  "src": "finite_loop1",
+                  "dst": "finite_loop2",
+                  "condition": "default"
+                },
+                {
+                  "src": "finite_loop2",
+                  "dst": "stateOutOfBound",
+                  "condition": "always"
+                },
+                {
+                  "src": "stateOutOfBound",
+                  "dst": "reject",
+                  "condition": "always"
+                }
+              ]
+            },
+            {
+              "segment_id": "sg2_seg_014",
+              "usage_count": 1,
+              "depth_nodes": 2,
+              "depth_edges": 1,
+              "start_node": "start_loops1",
+              "end_node": "reject",
+              "path_str": "start_loops1 -> reject",
+              "nodes": [
+                "start_loops1",
+                "reject"
+              ],
+              "transitions": [
+                {
+                  "src": "start_loops1",
+                  "dst": "reject",
+                  "condition": "default"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "paths": [
+        {
+          "path_index": 0,
+          "original_path": {
+            "nodes": [
+              "start",
+              "start_loops",
+              "mixed_finite_loop",
+              "start_loops1",
+              "mixed_finite_loop1",
+              "start_loops2",
+              "mixed_finite_loop2",
+              "stateOutOfBound",
+              "reject"
+            ],
+            "depth_nodes": 9,
+            "depth_edges": 8,
+            "path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1 -> mixed_finite_loop1 -> start_loops2 -> mixed_finite_loop2 -> stateOutOfBound -> reject",
+            "transitions": [
+              {
+                "src": "start",
+                "dst": "start_loops",
+                "condition": "always"
+              },
+              {
+                "src": "start_loops",
+                "dst": "mixed_finite_loop",
+                "condition": "8w0"
+              },
+              {
+                "src": "mixed_finite_loop",
+                "dst": "start_loops1",
+                "condition": "8w1"
+              },
+              {
+                "src": "start_loops1",
+                "dst": "mixed_finite_loop1",
+                "condition": "8w0"
+              },
+              {
+                "src": "mixed_finite_loop1",
+                "dst": "start_loops2",
+                "condition": "8w1"
+              },
+              {
+                "src": "start_loops2",
+                "dst": "mixed_finite_loop2",
+                "condition": "8w0"
+              },
+              {
+                "src": "mixed_finite_loop2",
+                "dst": "stateOutOfBound",
+                "condition": "always"
+              },
+              {
+                "src": "stateOutOfBound",
+                "dst": "reject",
+                "condition": "always"
+              }
+            ]
+          },
+          "segments": [
+            {
+              "subgraph_id": 1,
+              "layer_start": 0,
+              "layer_end": 3,
+              "actual_end_depth": 3,
+              "segment_nodes": [
+                "start",
+                "start_loops",
+                "mixed_finite_loop",
+                "start_loops1"
+              ],
+              "segment_path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1",
+              "segment_transitions": [
+                {
+                  "src": "start",
+                  "dst": "start_loops",
+                  "condition": "always"
+                },
+                {
+                  "src": "start_loops",
+                  "dst": "mixed_finite_loop",
+                  "condition": "8w0"
+                },
+                {
+                  "src": "mixed_finite_loop",
+                  "dst": "start_loops1",
+                  "condition": "8w1"
+                }
+              ],
+              "segment_transition_count": 3
+            },
+            {
+              "subgraph_id": 2,
+              "layer_start": 3,
+              "layer_end": 8,
+              "actual_end_depth": 8,
+              "segment_nodes": [
+                "start_loops1",
+                "mixed_finite_loop1",
+                "start_loops2",
+                "mixed_finite_loop2",
+                "stateOutOfBound",
+                "reject"
+              ],
+              "segment_path_str": "start_loops1 -> mixed_finite_loop1 -> start_loops2 -> mixed_finite_loop2 -> stateOutOfBound -> reject",
+              "segment_transitions": [
+                {
+                  "src": "start_loops1",
+                  "dst": "mixed_finite_loop1",
+                  "condition": "8w0"
+                },
+                {
+                  "src": "mixed_finite_loop1",
+                  "dst": "start_loops2",
+                  "condition": "8w1"
+                },
+                {
+                  "src": "start_loops2",
+                  "dst": "mixed_finite_loop2",
+                  "condition": "8w0"
+                },
+                {
+                  "src": "mixed_finite_loop2",
+                  "dst": "stateOutOfBound",
+                  "condition": "always"
+                },
+                {
+                  "src": "stateOutOfBound",
+                  "dst": "reject",
+                  "condition": "always"
+                }
+              ],
+              "segment_transition_count": 5
+            }
+          ]
+        },
+        {
+          "path_index": 1,
+          "original_path": {
+            "nodes": [
+              "start",
+              "start_loops",
+              "mixed_finite_loop",
+              "start_loops1",
+              "mixed_finite_loop1",
+              "start_loops2",
+              "infinite_loop",
+              "accept"
+            ],
+            "depth_nodes": 8,
+            "depth_edges": 7,
+            "path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1 -> mixed_finite_loop1 -> start_loops2 -> infinite_loop -> accept",
+            "transitions": [
+              {
+                "src": "start",
+                "dst": "start_loops",
+                "condition": "always"
+              },
+              {
+                "src": "start_loops",
+                "dst": "mixed_finite_loop",
+                "condition": "8w0"
+              },
+              {
+                "src": "mixed_finite_loop",
+                "dst": "start_loops1",
+                "condition": "8w1"
+              },
+              {
+                "src": "start_loops1",
+                "dst": "mixed_finite_loop1",
+                "condition": "8w0"
+              },
+              {
+                "src": "mixed_finite_loop1",
+                "dst": "start_loops2",
+                "condition": "8w1"
+              },
+              {
+                "src": "start_loops2",
+                "dst": "infinite_loop",
+                "condition": "8w2"
+              },
+              {
+                "src": "infinite_loop",
+                "dst": "accept",
+                "condition": "8w3"
+              }
+            ]
+          },
+          "segments": [
+            {
+              "subgraph_id": 1,
+              "layer_start": 0,
+              "layer_end": 3,
+              "actual_end_depth": 3,
+              "segment_nodes": [
+                "start",
+                "start_loops",
+                "mixed_finite_loop",
+                "start_loops1"
+              ],
+              "segment_path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1",
+              "segment_transitions": [
+                {
+                  "src": "start",
+                  "dst": "start_loops",
+                  "condition": "always"
+                },
+                {
+                  "src": "start_loops",
+                  "dst": "mixed_finite_loop",
+                  "condition": "8w0"
+                },
+                {
+                  "src": "mixed_finite_loop",
+                  "dst": "start_loops1",
+                  "condition": "8w1"
+                }
+              ],
+              "segment_transition_count": 3
+            },
+            {
+              "subgraph_id": 2,
+              "layer_start": 3,
+              "layer_end": 8,
+              "actual_end_depth": 7,
+              "segment_nodes": [
+                "start_loops1",
+                "mixed_finite_loop1",
+                "start_loops2",
+                "infinite_loop",
+                "accept"
+              ],
+              "segment_path_str": "start_loops1 -> mixed_finite_loop1 -> start_loops2 -> infinite_loop -> accept",
+              "segment_transitions": [
+                {
+                  "src": "start_loops1",
+                  "dst": "mixed_finite_loop1",
+                  "condition": "8w0"
+                },
+                {
+                  "src": "mixed_finite_loop1",
+                  "dst": "start_loops2",
+                  "condition": "8w1"
+                },
+                {
+                  "src": "start_loops2",
+                  "dst": "infinite_loop",
+                  "condition": "8w2"
+                },
+                {
+                  "src": "infinite_loop",
+                  "dst": "accept",
+                  "condition": "8w3"
+                }
+              ],
+              "segment_transition_count": 4
+            }
+          ]
+        },
+        {
+          "path_index": 2,
+          "original_path": {
+            "nodes": [
+              "start",
+              "start_loops",
+              "mixed_finite_loop",
+              "start_loops1",
+              "mixed_finite_loop1",
+              "start_loops2",
+              "finite_loop2",
+              "stateOutOfBound",
+              "reject"
+            ],
+            "depth_nodes": 9,
+            "depth_edges": 8,
+            "path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1 -> mixed_finite_loop1 -> start_loops2 -> finite_loop2 -> stateOutOfBound -> reject",
+            "transitions": [
+              {
+                "src": "start",
+                "dst": "start_loops",
+                "condition": "always"
+              },
+              {
+                "src": "start_loops",
+                "dst": "mixed_finite_loop",
+                "condition": "8w0"
+              },
+              {
+                "src": "mixed_finite_loop",
+                "dst": "start_loops1",
+                "condition": "8w1"
+              },
+              {
+                "src": "start_loops1",
+                "dst": "mixed_finite_loop1",
+                "condition": "8w0"
+              },
+              {
+                "src": "mixed_finite_loop1",
+                "dst": "start_loops2",
+                "condition": "8w1"
+              },
+              {
+                "src": "start_loops2",
+                "dst": "finite_loop2",
+                "condition": "8w3"
+              },
+              {
+                "src": "finite_loop2",
+                "dst": "stateOutOfBound",
+                "condition": "always"
+              },
+              {
+                "src": "stateOutOfBound",
+                "dst": "reject",
+                "condition": "always"
+              }
+            ]
+          },
+          "segments": [
+            {
+              "subgraph_id": 1,
+              "layer_start": 0,
+              "layer_end": 3,
+              "actual_end_depth": 3,
+              "segment_nodes": [
+                "start",
+                "start_loops",
+                "mixed_finite_loop",
+                "start_loops1"
+              ],
+              "segment_path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1",
+              "segment_transitions": [
+                {
+                  "src": "start",
+                  "dst": "start_loops",
+                  "condition": "always"
+                },
+                {
+                  "src": "start_loops",
+                  "dst": "mixed_finite_loop",
+                  "condition": "8w0"
+                },
+                {
+                  "src": "mixed_finite_loop",
+                  "dst": "start_loops1",
+                  "condition": "8w1"
+                }
+              ],
+              "segment_transition_count": 3
+            },
+            {
+              "subgraph_id": 2,
+              "layer_start": 3,
+              "layer_end": 8,
+              "actual_end_depth": 8,
+              "segment_nodes": [
+                "start_loops1",
+                "mixed_finite_loop1",
+                "start_loops2",
+                "finite_loop2",
+                "stateOutOfBound",
+                "reject"
+              ],
+              "segment_path_str": "start_loops1 -> mixed_finite_loop1 -> start_loops2 -> finite_loop2 -> stateOutOfBound -> reject",
+              "segment_transitions": [
+                {
+                  "src": "start_loops1",
+                  "dst": "mixed_finite_loop1",
+                  "condition": "8w0"
+                },
+                {
+                  "src": "mixed_finite_loop1",
+                  "dst": "start_loops2",
+                  "condition": "8w1"
+                },
+                {
+                  "src": "start_loops2",
+                  "dst": "finite_loop2",
+                  "condition": "8w3"
+                },
+                {
+                  "src": "finite_loop2",
+                  "dst": "stateOutOfBound",
+                  "condition": "always"
+                },
+                {
+                  "src": "stateOutOfBound",
+                  "dst": "reject",
+                  "condition": "always"
+                }
+              ],
+              "segment_transition_count": 5
+            }
+          ]
+        },
+        {
+          "path_index": 3,
+          "original_path": {
+            "nodes": [
+              "start",
+              "start_loops",
+              "mixed_finite_loop",
+              "start_loops1",
+              "mixed_finite_loop1",
+              "start_loops2",
+              "reject"
+            ],
+            "depth_nodes": 7,
+            "depth_edges": 6,
+            "path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1 -> mixed_finite_loop1 -> start_loops2 -> reject",
+            "transitions": [
+              {
+                "src": "start",
+                "dst": "start_loops",
+                "condition": "always"
+              },
+              {
+                "src": "start_loops",
+                "dst": "mixed_finite_loop",
+                "condition": "8w0"
+              },
+              {
+                "src": "mixed_finite_loop",
+                "dst": "start_loops1",
+                "condition": "8w1"
+              },
+              {
+                "src": "start_loops1",
+                "dst": "mixed_finite_loop1",
+                "condition": "8w0"
+              },
+              {
+                "src": "mixed_finite_loop1",
+                "dst": "start_loops2",
+                "condition": "8w1"
+              },
+              {
+                "src": "start_loops2",
+                "dst": "reject",
+                "condition": "default"
+              }
+            ]
+          },
+          "segments": [
+            {
+              "subgraph_id": 1,
+              "layer_start": 0,
+              "layer_end": 3,
+              "actual_end_depth": 3,
+              "segment_nodes": [
+                "start",
+                "start_loops",
+                "mixed_finite_loop",
+                "start_loops1"
+              ],
+              "segment_path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1",
+              "segment_transitions": [
+                {
+                  "src": "start",
+                  "dst": "start_loops",
+                  "condition": "always"
+                },
+                {
+                  "src": "start_loops",
+                  "dst": "mixed_finite_loop",
+                  "condition": "8w0"
+                },
+                {
+                  "src": "mixed_finite_loop",
+                  "dst": "start_loops1",
+                  "condition": "8w1"
+                }
+              ],
+              "segment_transition_count": 3
+            },
+            {
+              "subgraph_id": 2,
+              "layer_start": 3,
+              "layer_end": 8,
+              "actual_end_depth": 6,
+              "segment_nodes": [
+                "start_loops1",
+                "mixed_finite_loop1",
+                "start_loops2",
+                "reject"
+              ],
+              "segment_path_str": "start_loops1 -> mixed_finite_loop1 -> start_loops2 -> reject",
+              "segment_transitions": [
+                {
+                  "src": "start_loops1",
+                  "dst": "mixed_finite_loop1",
+                  "condition": "8w0"
+                },
+                {
+                  "src": "mixed_finite_loop1",
+                  "dst": "start_loops2",
+                  "condition": "8w1"
+                },
+                {
+                  "src": "start_loops2",
+                  "dst": "reject",
+                  "condition": "default"
+                }
+              ],
+              "segment_transition_count": 3
+            }
+          ]
+        },
+        {
+          "path_index": 4,
+          "original_path": {
+            "nodes": [
+              "start",
+              "start_loops",
+              "mixed_finite_loop",
+              "start_loops1",
+              "mixed_finite_loop1",
+              "accept"
+            ],
+            "depth_nodes": 6,
+            "depth_edges": 5,
+            "path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1 -> mixed_finite_loop1 -> accept",
+            "transitions": [
+              {
+                "src": "start",
+                "dst": "start_loops",
+                "condition": "always"
+              },
+              {
+                "src": "start_loops",
+                "dst": "mixed_finite_loop",
+                "condition": "8w0"
+              },
+              {
+                "src": "mixed_finite_loop",
+                "dst": "start_loops1",
+                "condition": "8w1"
+              },
+              {
+                "src": "start_loops1",
+                "dst": "mixed_finite_loop1",
+                "condition": "8w0"
+              },
+              {
+                "src": "mixed_finite_loop1",
+                "dst": "accept",
+                "condition": "8w2"
+              }
+            ]
+          },
+          "segments": [
+            {
+              "subgraph_id": 1,
+              "layer_start": 0,
+              "layer_end": 3,
+              "actual_end_depth": 3,
+              "segment_nodes": [
+                "start",
+                "start_loops",
+                "mixed_finite_loop",
+                "start_loops1"
+              ],
+              "segment_path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1",
+              "segment_transitions": [
+                {
+                  "src": "start",
+                  "dst": "start_loops",
+                  "condition": "always"
+                },
+                {
+                  "src": "start_loops",
+                  "dst": "mixed_finite_loop",
+                  "condition": "8w0"
+                },
+                {
+                  "src": "mixed_finite_loop",
+                  "dst": "start_loops1",
+                  "condition": "8w1"
+                }
+              ],
+              "segment_transition_count": 3
+            },
+            {
+              "subgraph_id": 2,
+              "layer_start": 3,
+              "layer_end": 8,
+              "actual_end_depth": 5,
+              "segment_nodes": [
+                "start_loops1",
+                "mixed_finite_loop1",
+                "accept"
+              ],
+              "segment_path_str": "start_loops1 -> mixed_finite_loop1 -> accept",
+              "segment_transitions": [
+                {
+                  "src": "start_loops1",
+                  "dst": "mixed_finite_loop1",
+                  "condition": "8w0"
+                },
+                {
+                  "src": "mixed_finite_loop1",
+                  "dst": "accept",
+                  "condition": "8w2"
+                }
+              ],
+              "segment_transition_count": 2
+            }
+          ]
+        },
+        {
+          "path_index": 5,
+          "original_path": {
+            "nodes": [
+              "start",
+              "start_loops",
+              "mixed_finite_loop",
+              "start_loops1",
+              "mixed_finite_loop1",
+              "noMatch",
+              "reject"
+            ],
+            "depth_nodes": 7,
+            "depth_edges": 6,
+            "path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1 -> mixed_finite_loop1 -> noMatch -> reject",
+            "transitions": [
+              {
+                "src": "start",
+                "dst": "start_loops",
+                "condition": "always"
+              },
+              {
+                "src": "start_loops",
+                "dst": "mixed_finite_loop",
+                "condition": "8w0"
+              },
+              {
+                "src": "mixed_finite_loop",
+                "dst": "start_loops1",
+                "condition": "8w1"
+              },
+              {
+                "src": "start_loops1",
+                "dst": "mixed_finite_loop1",
+                "condition": "8w0"
+              },
+              {
+                "src": "mixed_finite_loop1",
+                "dst": "noMatch",
+                "condition": "default"
+              },
+              {
+                "src": "noMatch",
+                "dst": "reject",
+                "condition": "always"
+              }
+            ]
+          },
+          "segments": [
+            {
+              "subgraph_id": 1,
+              "layer_start": 0,
+              "layer_end": 3,
+              "actual_end_depth": 3,
+              "segment_nodes": [
+                "start",
+                "start_loops",
+                "mixed_finite_loop",
+                "start_loops1"
+              ],
+              "segment_path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1",
+              "segment_transitions": [
+                {
+                  "src": "start",
+                  "dst": "start_loops",
+                  "condition": "always"
+                },
+                {
+                  "src": "start_loops",
+                  "dst": "mixed_finite_loop",
+                  "condition": "8w0"
+                },
+                {
+                  "src": "mixed_finite_loop",
+                  "dst": "start_loops1",
+                  "condition": "8w1"
+                }
+              ],
+              "segment_transition_count": 3
+            },
+            {
+              "subgraph_id": 2,
+              "layer_start": 3,
+              "layer_end": 8,
+              "actual_end_depth": 6,
+              "segment_nodes": [
+                "start_loops1",
+                "mixed_finite_loop1",
+                "noMatch",
+                "reject"
+              ],
+              "segment_path_str": "start_loops1 -> mixed_finite_loop1 -> noMatch -> reject",
+              "segment_transitions": [
+                {
+                  "src": "start_loops1",
+                  "dst": "mixed_finite_loop1",
+                  "condition": "8w0"
+                },
+                {
+                  "src": "mixed_finite_loop1",
+                  "dst": "noMatch",
+                  "condition": "default"
+                },
+                {
+                  "src": "noMatch",
+                  "dst": "reject",
+                  "condition": "always"
+                }
+              ],
+              "segment_transition_count": 3
+            }
+          ]
+        },
+        {
+          "path_index": 6,
+          "original_path": {
+            "nodes": [
+              "start",
+              "start_loops",
+              "mixed_finite_loop",
+              "start_loops1",
+              "infinite_loop",
+              "accept"
+            ],
+            "depth_nodes": 6,
+            "depth_edges": 5,
+            "path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1 -> infinite_loop -> accept",
+            "transitions": [
+              {
+                "src": "start",
+                "dst": "start_loops",
+                "condition": "always"
+              },
+              {
+                "src": "start_loops",
+                "dst": "mixed_finite_loop",
+                "condition": "8w0"
+              },
+              {
+                "src": "mixed_finite_loop",
+                "dst": "start_loops1",
+                "condition": "8w1"
+              },
+              {
+                "src": "start_loops1",
+                "dst": "infinite_loop",
+                "condition": "8w2"
+              },
+              {
+                "src": "infinite_loop",
+                "dst": "accept",
+                "condition": "8w3"
+              }
+            ]
+          },
+          "segments": [
+            {
+              "subgraph_id": 1,
+              "layer_start": 0,
+              "layer_end": 3,
+              "actual_end_depth": 3,
+              "segment_nodes": [
+                "start",
+                "start_loops",
+                "mixed_finite_loop",
+                "start_loops1"
+              ],
+              "segment_path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1",
+              "segment_transitions": [
+                {
+                  "src": "start",
+                  "dst": "start_loops",
+                  "condition": "always"
+                },
+                {
+                  "src": "start_loops",
+                  "dst": "mixed_finite_loop",
+                  "condition": "8w0"
+                },
+                {
+                  "src": "mixed_finite_loop",
+                  "dst": "start_loops1",
+                  "condition": "8w1"
+                }
+              ],
+              "segment_transition_count": 3
+            },
+            {
+              "subgraph_id": 2,
+              "layer_start": 3,
+              "layer_end": 8,
+              "actual_end_depth": 5,
+              "segment_nodes": [
+                "start_loops1",
+                "infinite_loop",
+                "accept"
+              ],
+              "segment_path_str": "start_loops1 -> infinite_loop -> accept",
+              "segment_transitions": [
+                {
+                  "src": "start_loops1",
+                  "dst": "infinite_loop",
+                  "condition": "8w2"
+                },
+                {
+                  "src": "infinite_loop",
+                  "dst": "accept",
+                  "condition": "8w3"
+                }
+              ],
+              "segment_transition_count": 2
+            }
+          ]
+        },
+        {
+          "path_index": 7,
+          "original_path": {
+            "nodes": [
+              "start",
+              "start_loops",
+              "mixed_finite_loop",
+              "start_loops1",
+              "finite_loop1",
+              "accept"
+            ],
+            "depth_nodes": 6,
+            "depth_edges": 5,
+            "path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1 -> finite_loop1 -> accept",
+            "transitions": [
+              {
+                "src": "start",
+                "dst": "start_loops",
+                "condition": "always"
+              },
+              {
+                "src": "start_loops",
+                "dst": "mixed_finite_loop",
+                "condition": "8w0"
+              },
+              {
+                "src": "mixed_finite_loop",
+                "dst": "start_loops1",
+                "condition": "8w1"
+              },
+              {
+                "src": "start_loops1",
+                "dst": "finite_loop1",
+                "condition": "8w3"
+              },
+              {
+                "src": "finite_loop1",
+                "dst": "accept",
+                "condition": "8w2"
+              }
+            ]
+          },
+          "segments": [
+            {
+              "subgraph_id": 1,
+              "layer_start": 0,
+              "layer_end": 3,
+              "actual_end_depth": 3,
+              "segment_nodes": [
+                "start",
+                "start_loops",
+                "mixed_finite_loop",
+                "start_loops1"
+              ],
+              "segment_path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1",
+              "segment_transitions": [
+                {
+                  "src": "start",
+                  "dst": "start_loops",
+                  "condition": "always"
+                },
+                {
+                  "src": "start_loops",
+                  "dst": "mixed_finite_loop",
+                  "condition": "8w0"
+                },
+                {
+                  "src": "mixed_finite_loop",
+                  "dst": "start_loops1",
+                  "condition": "8w1"
+                }
+              ],
+              "segment_transition_count": 3
+            },
+            {
+              "subgraph_id": 2,
+              "layer_start": 3,
+              "layer_end": 8,
+              "actual_end_depth": 5,
+              "segment_nodes": [
+                "start_loops1",
+                "finite_loop1",
+                "accept"
+              ],
+              "segment_path_str": "start_loops1 -> finite_loop1 -> accept",
+              "segment_transitions": [
+                {
+                  "src": "start_loops1",
+                  "dst": "finite_loop1",
+                  "condition": "8w3"
+                },
+                {
+                  "src": "finite_loop1",
+                  "dst": "accept",
+                  "condition": "8w2"
+                }
+              ],
+              "segment_transition_count": 2
+            }
+          ]
+        },
+        {
+          "path_index": 8,
+          "original_path": {
+            "nodes": [
+              "start",
+              "start_loops",
+              "mixed_finite_loop",
+              "start_loops1",
+              "finite_loop1",
+              "finite_loop2",
+              "stateOutOfBound",
+              "reject"
+            ],
+            "depth_nodes": 8,
+            "depth_edges": 7,
+            "path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1 -> finite_loop1 -> finite_loop2 -> stateOutOfBound -> reject",
+            "transitions": [
+              {
+                "src": "start",
+                "dst": "start_loops",
+                "condition": "always"
+              },
+              {
+                "src": "start_loops",
+                "dst": "mixed_finite_loop",
+                "condition": "8w0"
+              },
+              {
+                "src": "mixed_finite_loop",
+                "dst": "start_loops1",
+                "condition": "8w1"
+              },
+              {
+                "src": "start_loops1",
+                "dst": "finite_loop1",
+                "condition": "8w3"
+              },
+              {
+                "src": "finite_loop1",
+                "dst": "finite_loop2",
+                "condition": "default"
+              },
+              {
+                "src": "finite_loop2",
+                "dst": "stateOutOfBound",
+                "condition": "always"
+              },
+              {
+                "src": "stateOutOfBound",
+                "dst": "reject",
+                "condition": "always"
+              }
+            ]
+          },
+          "segments": [
+            {
+              "subgraph_id": 1,
+              "layer_start": 0,
+              "layer_end": 3,
+              "actual_end_depth": 3,
+              "segment_nodes": [
+                "start",
+                "start_loops",
+                "mixed_finite_loop",
+                "start_loops1"
+              ],
+              "segment_path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1",
+              "segment_transitions": [
+                {
+                  "src": "start",
+                  "dst": "start_loops",
+                  "condition": "always"
+                },
+                {
+                  "src": "start_loops",
+                  "dst": "mixed_finite_loop",
+                  "condition": "8w0"
+                },
+                {
+                  "src": "mixed_finite_loop",
+                  "dst": "start_loops1",
+                  "condition": "8w1"
+                }
+              ],
+              "segment_transition_count": 3
+            },
+            {
+              "subgraph_id": 2,
+              "layer_start": 3,
+              "layer_end": 8,
+              "actual_end_depth": 7,
+              "segment_nodes": [
+                "start_loops1",
+                "finite_loop1",
+                "finite_loop2",
+                "stateOutOfBound",
+                "reject"
+              ],
+              "segment_path_str": "start_loops1 -> finite_loop1 -> finite_loop2 -> stateOutOfBound -> reject",
+              "segment_transitions": [
+                {
+                  "src": "start_loops1",
+                  "dst": "finite_loop1",
+                  "condition": "8w3"
+                },
+                {
+                  "src": "finite_loop1",
+                  "dst": "finite_loop2",
+                  "condition": "default"
+                },
+                {
+                  "src": "finite_loop2",
+                  "dst": "stateOutOfBound",
+                  "condition": "always"
+                },
+                {
+                  "src": "stateOutOfBound",
+                  "dst": "reject",
+                  "condition": "always"
+                }
+              ],
+              "segment_transition_count": 4
+            }
+          ]
+        },
+        {
+          "path_index": 9,
+          "original_path": {
+            "nodes": [
+              "start",
+              "start_loops",
+              "mixed_finite_loop",
+              "start_loops1",
+              "reject"
+            ],
+            "depth_nodes": 5,
+            "depth_edges": 4,
+            "path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1 -> reject",
+            "transitions": [
+              {
+                "src": "start",
+                "dst": "start_loops",
+                "condition": "always"
+              },
+              {
+                "src": "start_loops",
+                "dst": "mixed_finite_loop",
+                "condition": "8w0"
+              },
+              {
+                "src": "mixed_finite_loop",
+                "dst": "start_loops1",
+                "condition": "8w1"
+              },
+              {
+                "src": "start_loops1",
+                "dst": "reject",
+                "condition": "default"
+              }
+            ]
+          },
+          "segments": [
+            {
+              "subgraph_id": 1,
+              "layer_start": 0,
+              "layer_end": 3,
+              "actual_end_depth": 3,
+              "segment_nodes": [
+                "start",
+                "start_loops",
+                "mixed_finite_loop",
+                "start_loops1"
+              ],
+              "segment_path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1",
+              "segment_transitions": [
+                {
+                  "src": "start",
+                  "dst": "start_loops",
+                  "condition": "always"
+                },
+                {
+                  "src": "start_loops",
+                  "dst": "mixed_finite_loop",
+                  "condition": "8w0"
+                },
+                {
+                  "src": "mixed_finite_loop",
+                  "dst": "start_loops1",
+                  "condition": "8w1"
+                }
+              ],
+              "segment_transition_count": 3
+            },
+            {
+              "subgraph_id": 2,
+              "layer_start": 3,
+              "layer_end": 8,
+              "actual_end_depth": 4,
+              "segment_nodes": [
+                "start_loops1",
+                "reject"
+              ],
+              "segment_path_str": "start_loops1 -> reject",
+              "segment_transitions": [
+                {
+                  "src": "start_loops1",
+                  "dst": "reject",
+                  "condition": "default"
+                }
+              ],
+              "segment_transition_count": 1
+            }
+          ]
+        },
+        {
+          "path_index": 10,
+          "original_path": {
+            "nodes": [
+              "start",
+              "start_loops",
+              "mixed_finite_loop",
+              "accept"
+            ],
+            "depth_nodes": 4,
+            "depth_edges": 3,
+            "path_str": "start -> start_loops -> mixed_finite_loop -> accept",
+            "transitions": [
+              {
+                "src": "start",
+                "dst": "start_loops",
+                "condition": "always"
+              },
+              {
+                "src": "start_loops",
+                "dst": "mixed_finite_loop",
+                "condition": "8w0"
+              },
+              {
+                "src": "mixed_finite_loop",
+                "dst": "accept",
+                "condition": "8w2"
+              }
+            ]
+          },
+          "segments": [
+            {
+              "subgraph_id": 1,
+              "layer_start": 0,
+              "layer_end": 3,
+              "actual_end_depth": 3,
+              "segment_nodes": [
+                "start",
+                "start_loops",
+                "mixed_finite_loop",
+                "accept"
+              ],
+              "segment_path_str": "start -> start_loops -> mixed_finite_loop -> accept",
+              "segment_transitions": [
+                {
+                  "src": "start",
+                  "dst": "start_loops",
+                  "condition": "always"
+                },
+                {
+                  "src": "start_loops",
+                  "dst": "mixed_finite_loop",
+                  "condition": "8w0"
+                },
+                {
+                  "src": "mixed_finite_loop",
+                  "dst": "accept",
+                  "condition": "8w2"
+                }
+              ],
+              "segment_transition_count": 3
+            },
+            {
+              "subgraph_id": 2,
+              "layer_start": 3,
+              "layer_end": 8,
+              "actual_end_depth": 3,
+              "segment_nodes": [
+                "accept"
+              ],
+              "segment_path_str": "accept",
+              "segment_transitions": [],
+              "segment_transition_count": 0
+            }
+          ]
+        },
+        {
+          "path_index": 11,
+          "original_path": {
+            "nodes": [
+              "start",
+              "start_loops",
+              "mixed_finite_loop",
+              "noMatch",
+              "reject"
+            ],
+            "depth_nodes": 5,
+            "depth_edges": 4,
+            "path_str": "start -> start_loops -> mixed_finite_loop -> noMatch -> reject",
+            "transitions": [
+              {
+                "src": "start",
+                "dst": "start_loops",
+                "condition": "always"
+              },
+              {
+                "src": "start_loops",
+                "dst": "mixed_finite_loop",
+                "condition": "8w0"
+              },
+              {
+                "src": "mixed_finite_loop",
+                "dst": "noMatch",
+                "condition": "default"
+              },
+              {
+                "src": "noMatch",
+                "dst": "reject",
+                "condition": "always"
+              }
+            ]
+          },
+          "segments": [
+            {
+              "subgraph_id": 1,
+              "layer_start": 0,
+              "layer_end": 3,
+              "actual_end_depth": 3,
+              "segment_nodes": [
+                "start",
+                "start_loops",
+                "mixed_finite_loop",
+                "noMatch"
+              ],
+              "segment_path_str": "start -> start_loops -> mixed_finite_loop -> noMatch",
+              "segment_transitions": [
+                {
+                  "src": "start",
+                  "dst": "start_loops",
+                  "condition": "always"
+                },
+                {
+                  "src": "start_loops",
+                  "dst": "mixed_finite_loop",
+                  "condition": "8w0"
+                },
+                {
+                  "src": "mixed_finite_loop",
+                  "dst": "noMatch",
+                  "condition": "default"
+                }
+              ],
+              "segment_transition_count": 3
+            },
+            {
+              "subgraph_id": 2,
+              "layer_start": 3,
+              "layer_end": 8,
+              "actual_end_depth": 4,
+              "segment_nodes": [
+                "noMatch",
+                "reject"
+              ],
+              "segment_path_str": "noMatch -> reject",
+              "segment_transitions": [
+                {
+                  "src": "noMatch",
+                  "dst": "reject",
+                  "condition": "always"
+                }
+              ],
+              "segment_transition_count": 1
+            }
+          ]
+        },
+        {
+          "path_index": 12,
+          "original_path": {
+            "nodes": [
+              "start",
+              "start_loops",
+              "infinite_loop",
+              "accept"
+            ],
+            "depth_nodes": 4,
+            "depth_edges": 3,
+            "path_str": "start -> start_loops -> infinite_loop -> accept",
+            "transitions": [
+              {
+                "src": "start",
+                "dst": "start_loops",
+                "condition": "always"
+              },
+              {
+                "src": "start_loops",
+                "dst": "infinite_loop",
+                "condition": "8w2"
+              },
+              {
+                "src": "infinite_loop",
+                "dst": "accept",
+                "condition": "8w3"
+              }
+            ]
+          },
+          "segments": [
+            {
+              "subgraph_id": 1,
+              "layer_start": 0,
+              "layer_end": 3,
+              "actual_end_depth": 3,
+              "segment_nodes": [
+                "start",
+                "start_loops",
+                "infinite_loop",
+                "accept"
+              ],
+              "segment_path_str": "start -> start_loops -> infinite_loop -> accept",
+              "segment_transitions": [
+                {
+                  "src": "start",
+                  "dst": "start_loops",
+                  "condition": "always"
+                },
+                {
+                  "src": "start_loops",
+                  "dst": "infinite_loop",
+                  "condition": "8w2"
+                },
+                {
+                  "src": "infinite_loop",
+                  "dst": "accept",
+                  "condition": "8w3"
+                }
+              ],
+              "segment_transition_count": 3
+            },
+            {
+              "subgraph_id": 2,
+              "layer_start": 3,
+              "layer_end": 8,
+              "actual_end_depth": 3,
+              "segment_nodes": [
+                "accept"
+              ],
+              "segment_path_str": "accept",
+              "segment_transitions": [],
+              "segment_transition_count": 0
+            }
+          ]
+        },
+        {
+          "path_index": 13,
+          "original_path": {
+            "nodes": [
+              "start",
+              "start_loops",
+              "finite_loop",
+              "accept"
+            ],
+            "depth_nodes": 4,
+            "depth_edges": 3,
+            "path_str": "start -> start_loops -> finite_loop -> accept",
+            "transitions": [
+              {
+                "src": "start",
+                "dst": "start_loops",
+                "condition": "always"
+              },
+              {
+                "src": "start_loops",
+                "dst": "finite_loop",
+                "condition": "8w3"
+              },
+              {
+                "src": "finite_loop",
+                "dst": "accept",
+                "condition": "8w2"
+              }
+            ]
+          },
+          "segments": [
+            {
+              "subgraph_id": 1,
+              "layer_start": 0,
+              "layer_end": 3,
+              "actual_end_depth": 3,
+              "segment_nodes": [
+                "start",
+                "start_loops",
+                "finite_loop",
+                "accept"
+              ],
+              "segment_path_str": "start -> start_loops -> finite_loop -> accept",
+              "segment_transitions": [
+                {
+                  "src": "start",
+                  "dst": "start_loops",
+                  "condition": "always"
+                },
+                {
+                  "src": "start_loops",
+                  "dst": "finite_loop",
+                  "condition": "8w3"
+                },
+                {
+                  "src": "finite_loop",
+                  "dst": "accept",
+                  "condition": "8w2"
+                }
+              ],
+              "segment_transition_count": 3
+            },
+            {
+              "subgraph_id": 2,
+              "layer_start": 3,
+              "layer_end": 8,
+              "actual_end_depth": 3,
+              "segment_nodes": [
+                "accept"
+              ],
+              "segment_path_str": "accept",
+              "segment_transitions": [],
+              "segment_transition_count": 0
+            }
+          ]
+        },
+        {
+          "path_index": 14,
+          "original_path": {
+            "nodes": [
+              "start",
+              "start_loops",
+              "finite_loop",
+              "finite_loop1",
+              "accept"
+            ],
+            "depth_nodes": 5,
+            "depth_edges": 4,
+            "path_str": "start -> start_loops -> finite_loop -> finite_loop1 -> accept",
+            "transitions": [
+              {
+                "src": "start",
+                "dst": "start_loops",
+                "condition": "always"
+              },
+              {
+                "src": "start_loops",
+                "dst": "finite_loop",
+                "condition": "8w3"
+              },
+              {
+                "src": "finite_loop",
+                "dst": "finite_loop1",
+                "condition": "default"
+              },
+              {
+                "src": "finite_loop1",
+                "dst": "accept",
+                "condition": "8w2"
+              }
+            ]
+          },
+          "segments": [
+            {
+              "subgraph_id": 1,
+              "layer_start": 0,
+              "layer_end": 3,
+              "actual_end_depth": 3,
+              "segment_nodes": [
+                "start",
+                "start_loops",
+                "finite_loop",
+                "finite_loop1"
+              ],
+              "segment_path_str": "start -> start_loops -> finite_loop -> finite_loop1",
+              "segment_transitions": [
+                {
+                  "src": "start",
+                  "dst": "start_loops",
+                  "condition": "always"
+                },
+                {
+                  "src": "start_loops",
+                  "dst": "finite_loop",
+                  "condition": "8w3"
+                },
+                {
+                  "src": "finite_loop",
+                  "dst": "finite_loop1",
+                  "condition": "default"
+                }
+              ],
+              "segment_transition_count": 3
+            },
+            {
+              "subgraph_id": 2,
+              "layer_start": 3,
+              "layer_end": 8,
+              "actual_end_depth": 4,
+              "segment_nodes": [
+                "finite_loop1",
+                "accept"
+              ],
+              "segment_path_str": "finite_loop1 -> accept",
+              "segment_transitions": [
+                {
+                  "src": "finite_loop1",
+                  "dst": "accept",
+                  "condition": "8w2"
+                }
+              ],
+              "segment_transition_count": 1
+            }
+          ]
+        },
+        {
+          "path_index": 15,
+          "original_path": {
+            "nodes": [
+              "start",
+              "start_loops",
+              "finite_loop",
+              "finite_loop1",
+              "finite_loop2",
+              "stateOutOfBound",
+              "reject"
+            ],
+            "depth_nodes": 7,
+            "depth_edges": 6,
+            "path_str": "start -> start_loops -> finite_loop -> finite_loop1 -> finite_loop2 -> stateOutOfBound -> reject",
+            "transitions": [
+              {
+                "src": "start",
+                "dst": "start_loops",
+                "condition": "always"
+              },
+              {
+                "src": "start_loops",
+                "dst": "finite_loop",
+                "condition": "8w3"
+              },
+              {
+                "src": "finite_loop",
+                "dst": "finite_loop1",
+                "condition": "default"
+              },
+              {
+                "src": "finite_loop1",
+                "dst": "finite_loop2",
+                "condition": "default"
+              },
+              {
+                "src": "finite_loop2",
+                "dst": "stateOutOfBound",
+                "condition": "always"
+              },
+              {
+                "src": "stateOutOfBound",
+                "dst": "reject",
+                "condition": "always"
+              }
+            ]
+          },
+          "segments": [
+            {
+              "subgraph_id": 1,
+              "layer_start": 0,
+              "layer_end": 3,
+              "actual_end_depth": 3,
+              "segment_nodes": [
+                "start",
+                "start_loops",
+                "finite_loop",
+                "finite_loop1"
+              ],
+              "segment_path_str": "start -> start_loops -> finite_loop -> finite_loop1",
+              "segment_transitions": [
+                {
+                  "src": "start",
+                  "dst": "start_loops",
+                  "condition": "always"
+                },
+                {
+                  "src": "start_loops",
+                  "dst": "finite_loop",
+                  "condition": "8w3"
+                },
+                {
+                  "src": "finite_loop",
+                  "dst": "finite_loop1",
+                  "condition": "default"
+                }
+              ],
+              "segment_transition_count": 3
+            },
+            {
+              "subgraph_id": 2,
+              "layer_start": 3,
+              "layer_end": 8,
+              "actual_end_depth": 6,
+              "segment_nodes": [
+                "finite_loop1",
+                "finite_loop2",
+                "stateOutOfBound",
+                "reject"
+              ],
+              "segment_path_str": "finite_loop1 -> finite_loop2 -> stateOutOfBound -> reject",
+              "segment_transitions": [
+                {
+                  "src": "finite_loop1",
+                  "dst": "finite_loop2",
+                  "condition": "default"
+                },
+                {
+                  "src": "finite_loop2",
+                  "dst": "stateOutOfBound",
+                  "condition": "always"
+                },
+                {
+                  "src": "stateOutOfBound",
+                  "dst": "reject",
+                  "condition": "always"
+                }
+              ],
+              "segment_transition_count": 3
+            }
+          ]
+        },
+        {
+          "path_index": 16,
+          "original_path": {
+            "nodes": [
+              "start",
+              "start_loops",
+              "reject"
+            ],
+            "depth_nodes": 3,
+            "depth_edges": 2,
+            "path_str": "start -> start_loops -> reject",
+            "transitions": [
+              {
+                "src": "start",
+                "dst": "start_loops",
+                "condition": "always"
+              },
+              {
+                "src": "start_loops",
+                "dst": "reject",
+                "condition": "default"
+              }
+            ]
+          },
+          "segments": [
+            {
+              "subgraph_id": 1,
+              "layer_start": 0,
+              "layer_end": 3,
+              "actual_end_depth": 2,
+              "segment_nodes": [
+                "start",
+                "start_loops",
+                "reject"
+              ],
+              "segment_path_str": "start -> start_loops -> reject",
+              "segment_transitions": [
+                {
+                  "src": "start",
+                  "dst": "start_loops",
+                  "condition": "always"
+                },
+                {
+                  "src": "start_loops",
+                  "dst": "reject",
+                  "condition": "default"
+                }
+              ],
+              "segment_transition_count": 2
+            }
+          ]
+        }
+      ],
+      "path_verification": {
+        "verified_path_count": 17,
+        "passed_path_count": 17,
+        "failed_path_count": 0,
+        "all_paths_reconstructed": true,
+        "failed_path_indexes": [],
+        "records": [
+          {
+            "path_index": 0,
+            "status": "PASS",
+            "segment_count": 2,
+            "node_match": true,
+            "transition_match": true,
+            "original_path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1 -> mixed_finite_loop1 -> start_loops2 -> mixed_finite_loop2 -> stateOutOfBound -> reject",
+            "reconstructed_path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1 -> mixed_finite_loop1 -> start_loops2 -> mixed_finite_loop2 -> stateOutOfBound -> reject",
+            "segment_chain": [
+              "SG1: start -> start_loops -> mixed_finite_loop -> start_loops1",
+              "SG2: start_loops1 -> mixed_finite_loop1 -> start_loops2 -> mixed_finite_loop2 -> stateOutOfBound -> reject"
+            ],
+            "error": ""
+          },
+          {
+            "path_index": 1,
+            "status": "PASS",
+            "segment_count": 2,
+            "node_match": true,
+            "transition_match": true,
+            "original_path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1 -> mixed_finite_loop1 -> start_loops2 -> infinite_loop -> accept",
+            "reconstructed_path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1 -> mixed_finite_loop1 -> start_loops2 -> infinite_loop -> accept",
+            "segment_chain": [
+              "SG1: start -> start_loops -> mixed_finite_loop -> start_loops1",
+              "SG2: start_loops1 -> mixed_finite_loop1 -> start_loops2 -> infinite_loop -> accept"
+            ],
+            "error": ""
+          },
+          {
+            "path_index": 2,
+            "status": "PASS",
+            "segment_count": 2,
+            "node_match": true,
+            "transition_match": true,
+            "original_path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1 -> mixed_finite_loop1 -> start_loops2 -> finite_loop2 -> stateOutOfBound -> reject",
+            "reconstructed_path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1 -> mixed_finite_loop1 -> start_loops2 -> finite_loop2 -> stateOutOfBound -> reject",
+            "segment_chain": [
+              "SG1: start -> start_loops -> mixed_finite_loop -> start_loops1",
+              "SG2: start_loops1 -> mixed_finite_loop1 -> start_loops2 -> finite_loop2 -> stateOutOfBound -> reject"
+            ],
+            "error": ""
+          },
+          {
+            "path_index": 3,
+            "status": "PASS",
+            "segment_count": 2,
+            "node_match": true,
+            "transition_match": true,
+            "original_path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1 -> mixed_finite_loop1 -> start_loops2 -> reject",
+            "reconstructed_path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1 -> mixed_finite_loop1 -> start_loops2 -> reject",
+            "segment_chain": [
+              "SG1: start -> start_loops -> mixed_finite_loop -> start_loops1",
+              "SG2: start_loops1 -> mixed_finite_loop1 -> start_loops2 -> reject"
+            ],
+            "error": ""
+          },
+          {
+            "path_index": 4,
+            "status": "PASS",
+            "segment_count": 2,
+            "node_match": true,
+            "transition_match": true,
+            "original_path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1 -> mixed_finite_loop1 -> accept",
+            "reconstructed_path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1 -> mixed_finite_loop1 -> accept",
+            "segment_chain": [
+              "SG1: start -> start_loops -> mixed_finite_loop -> start_loops1",
+              "SG2: start_loops1 -> mixed_finite_loop1 -> accept"
+            ],
+            "error": ""
+          },
+          {
+            "path_index": 5,
+            "status": "PASS",
+            "segment_count": 2,
+            "node_match": true,
+            "transition_match": true,
+            "original_path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1 -> mixed_finite_loop1 -> noMatch -> reject",
+            "reconstructed_path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1 -> mixed_finite_loop1 -> noMatch -> reject",
+            "segment_chain": [
+              "SG1: start -> start_loops -> mixed_finite_loop -> start_loops1",
+              "SG2: start_loops1 -> mixed_finite_loop1 -> noMatch -> reject"
+            ],
+            "error": ""
+          },
+          {
+            "path_index": 6,
+            "status": "PASS",
+            "segment_count": 2,
+            "node_match": true,
+            "transition_match": true,
+            "original_path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1 -> infinite_loop -> accept",
+            "reconstructed_path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1 -> infinite_loop -> accept",
+            "segment_chain": [
+              "SG1: start -> start_loops -> mixed_finite_loop -> start_loops1",
+              "SG2: start_loops1 -> infinite_loop -> accept"
+            ],
+            "error": ""
+          },
+          {
+            "path_index": 7,
+            "status": "PASS",
+            "segment_count": 2,
+            "node_match": true,
+            "transition_match": true,
+            "original_path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1 -> finite_loop1 -> accept",
+            "reconstructed_path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1 -> finite_loop1 -> accept",
+            "segment_chain": [
+              "SG1: start -> start_loops -> mixed_finite_loop -> start_loops1",
+              "SG2: start_loops1 -> finite_loop1 -> accept"
+            ],
+            "error": ""
+          },
+          {
+            "path_index": 8,
+            "status": "PASS",
+            "segment_count": 2,
+            "node_match": true,
+            "transition_match": true,
+            "original_path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1 -> finite_loop1 -> finite_loop2 -> stateOutOfBound -> reject",
+            "reconstructed_path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1 -> finite_loop1 -> finite_loop2 -> stateOutOfBound -> reject",
+            "segment_chain": [
+              "SG1: start -> start_loops -> mixed_finite_loop -> start_loops1",
+              "SG2: start_loops1 -> finite_loop1 -> finite_loop2 -> stateOutOfBound -> reject"
+            ],
+            "error": ""
+          },
+          {
+            "path_index": 9,
+            "status": "PASS",
+            "segment_count": 2,
+            "node_match": true,
+            "transition_match": true,
+            "original_path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1 -> reject",
+            "reconstructed_path_str": "start -> start_loops -> mixed_finite_loop -> start_loops1 -> reject",
+            "segment_chain": [
+              "SG1: start -> start_loops -> mixed_finite_loop -> start_loops1",
+              "SG2: start_loops1 -> reject"
+            ],
+            "error": ""
+          },
+          {
+            "path_index": 10,
+            "status": "PASS",
+            "segment_count": 2,
+            "node_match": true,
+            "transition_match": true,
+            "original_path_str": "start -> start_loops -> mixed_finite_loop -> accept",
+            "reconstructed_path_str": "start -> start_loops -> mixed_finite_loop -> accept",
+            "segment_chain": [
+              "SG1: start -> start_loops -> mixed_finite_loop -> accept",
+              "SG2: accept"
+            ],
+            "error": ""
+          },
+          {
+            "path_index": 11,
+            "status": "PASS",
+            "segment_count": 2,
+            "node_match": true,
+            "transition_match": true,
+            "original_path_str": "start -> start_loops -> mixed_finite_loop -> noMatch -> reject",
+            "reconstructed_path_str": "start -> start_loops -> mixed_finite_loop -> noMatch -> reject",
+            "segment_chain": [
+              "SG1: start -> start_loops -> mixed_finite_loop -> noMatch",
+              "SG2: noMatch -> reject"
+            ],
+            "error": ""
+          },
+          {
+            "path_index": 12,
+            "status": "PASS",
+            "segment_count": 2,
+            "node_match": true,
+            "transition_match": true,
+            "original_path_str": "start -> start_loops -> infinite_loop -> accept",
+            "reconstructed_path_str": "start -> start_loops -> infinite_loop -> accept",
+            "segment_chain": [
+              "SG1: start -> start_loops -> infinite_loop -> accept",
+              "SG2: accept"
+            ],
+            "error": ""
+          },
+          {
+            "path_index": 13,
+            "status": "PASS",
+            "segment_count": 2,
+            "node_match": true,
+            "transition_match": true,
+            "original_path_str": "start -> start_loops -> finite_loop -> accept",
+            "reconstructed_path_str": "start -> start_loops -> finite_loop -> accept",
+            "segment_chain": [
+              "SG1: start -> start_loops -> finite_loop -> accept",
+              "SG2: accept"
+            ],
+            "error": ""
+          },
+          {
+            "path_index": 14,
+            "status": "PASS",
+            "segment_count": 2,
+            "node_match": true,
+            "transition_match": true,
+            "original_path_str": "start -> start_loops -> finite_loop -> finite_loop1 -> accept",
+            "reconstructed_path_str": "start -> start_loops -> finite_loop -> finite_loop1 -> accept",
+            "segment_chain": [
+              "SG1: start -> start_loops -> finite_loop -> finite_loop1",
+              "SG2: finite_loop1 -> accept"
+            ],
+            "error": ""
+          },
+          {
+            "path_index": 15,
+            "status": "PASS",
+            "segment_count": 2,
+            "node_match": true,
+            "transition_match": true,
+            "original_path_str": "start -> start_loops -> finite_loop -> finite_loop1 -> finite_loop2 -> stateOutOfBound -> reject",
+            "reconstructed_path_str": "start -> start_loops -> finite_loop -> finite_loop1 -> finite_loop2 -> stateOutOfBound -> reject",
+            "segment_chain": [
+              "SG1: start -> start_loops -> finite_loop -> finite_loop1",
+              "SG2: finite_loop1 -> finite_loop2 -> stateOutOfBound -> reject"
+            ],
+            "error": ""
+          },
+          {
+            "path_index": 16,
+            "status": "PASS",
+            "segment_count": 1,
+            "node_match": true,
+            "transition_match": true,
+            "original_path_str": "start -> start_loops -> reject",
+            "reconstructed_path_str": "start -> start_loops -> reject",
+            "segment_chain": [
+              "SG1: start -> start_loops -> reject"
+            ],
+            "error": ""
+          }
+        ]
+      },
+      "path_basis": "unique_node_paths"
+    }
+  ]
+}

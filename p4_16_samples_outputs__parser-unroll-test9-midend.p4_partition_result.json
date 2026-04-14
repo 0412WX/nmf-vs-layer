@@ -1,0 +1,50 @@
+{
+  "subgraphs": [
+    {
+      "id": 1,
+      "layer_start": 0,
+      "layer_end": 4,
+      "path_segments_count": 11,
+      "nodes_count": 12,
+      "edges_count": 18,
+      "path_segments": [
+        "start → start_loops → finite_loop → finite_loop1 → finite_loop2",
+        "start → start_loops → mixed_finite_loop → noMatch → reject",
+        "start → start_loops → mixed_finite_loop → start_loops1 → finite_loop1",
+        "start → start_loops → mixed_finite_loop → start_loops1 → mixed_finite_loop1",
+        "start → start_loops → mixed_finite_loop → accept",
+        "start → start_loops → reject",
+        "start → start_loops → mixed_finite_loop → start_loops1 → reject",
+        "start → start_loops → mixed_finite_loop → start_loops1 → infinite_loop",
+        "start → start_loops → finite_loop → accept",
+        "start → start_loops → infinite_loop → accept",
+        "start → start_loops → finite_loop → finite_loop1 → accept"
+      ]
+    },
+    {
+      "id": 2,
+      "layer_start": 4,
+      "layer_end": 8,
+      "path_segments_count": 12,
+      "nodes_count": 10,
+      "edges_count": 14,
+      "path_segments": [
+        "mixed_finite_loop1 → start_loops2 → reject",
+        "infinite_loop → accept",
+        "finite_loop1 → finite_loop2 → stateOutOfBound → reject",
+        "mixed_finite_loop1 → start_loops2 → mixed_finite_loop2 → stateOutOfBound → reject",
+        "mixed_finite_loop1 → accept",
+        "finite_loop2 → stateOutOfBound → reject",
+        "finite_loop1 → accept",
+        "mixed_finite_loop1 → start_loops2 → infinite_loop → accept",
+        "mixed_finite_loop1 → start_loops2 → finite_loop2 → stateOutOfBound → reject",
+        "mixed_finite_loop1 → noMatch → reject",
+        "accept",
+        "reject"
+      ]
+    }
+  ],
+  "total_segments": 23,
+  "original_paths_count": 17,
+  "unique_node_paths_count": 17
+}

@@ -1,0 +1,3332 @@
+{
+  "source_file": "/home/npu_workspace/LLM_parser/HyperParser/input_files/P4_code/p4_14_samples_outputs/switch_20160512/switch-first.p4",
+  "source_relative_path": "p4_14_samples_outputs/switch_20160512/switch-first.p4",
+  "num_parsers": 1,
+  "parsers": [
+    {
+      "parser_name": "ParserImpl",
+      "num_nodes": 65,
+      "num_edges": 156,
+      "start_state": "start",
+      "nodes": [
+        "parse_all_int_meta_value_heders",
+        "parse_arp_rarp",
+        "parse_arp_rarp_ipv4",
+        "parse_bfd",
+        "parse_eompls",
+        "parse_erspan_t3",
+        "parse_ethernet",
+        "parse_fabric_header",
+        "parse_fabric_header_cpu",
+        "parse_fabric_header_mirror",
+        "parse_fabric_header_multicast",
+        "parse_fabric_header_unicast",
+        "parse_fabric_payload_header",
+        "parse_fabric_sflow_header",
+        "parse_fcoe",
+        "parse_geneve",
+        "parse_gpe_int_header",
+        "parse_gre",
+        "parse_gre_ipv4",
+        "parse_gre_ipv6",
+        "parse_gre_v6",
+        "parse_icmp",
+        "parse_inner_ethernet",
+        "parse_inner_icmp",
+        "parse_inner_ipv4",
+        "parse_inner_ipv6",
+        "parse_inner_sctp",
+        "parse_inner_tcp",
+        "parse_inner_udp",
+        "parse_int_header",
+        "parse_int_val",
+        "parse_ipv4",
+        "parse_ipv4_in_ip",
+        "parse_ipv6",
+        "parse_ipv6_in_ip",
+        "parse_lisp",
+        "parse_llc_header",
+        "parse_mpls",
+        "parse_mpls_bos",
+        "parse_mpls_inner_ipv4",
+        "parse_mpls_inner_ipv6",
+        "parse_nsh",
+        "parse_nvgre",
+        "parse_pw",
+        "parse_qinq",
+        "parse_qinq_vlan",
+        "parse_roce",
+        "parse_roce_v2",
+        "parse_sctp",
+        "parse_set_prio_high",
+        "parse_set_prio_max",
+        "parse_set_prio_med",
+        "parse_sflow",
+        "parse_snap_header",
+        "parse_tcp",
+        "parse_trill",
+        "parse_udp",
+        "parse_udp_v6",
+        "parse_vlan",
+        "parse_vntag",
+        "parse_vpls",
+        "parse_vxlan",
+        "parse_vxlan_gpe",
+        "start",
+        "accept"
+      ],
+      "node_to_index": {
+        "parse_all_int_meta_value_heders": 0,
+        "parse_arp_rarp": 1,
+        "parse_arp_rarp_ipv4": 2,
+        "parse_bfd": 3,
+        "parse_eompls": 4,
+        "parse_erspan_t3": 5,
+        "parse_ethernet": 6,
+        "parse_fabric_header": 7,
+        "parse_fabric_header_cpu": 8,
+        "parse_fabric_header_mirror": 9,
+        "parse_fabric_header_multicast": 10,
+        "parse_fabric_header_unicast": 11,
+        "parse_fabric_payload_header": 12,
+        "parse_fabric_sflow_header": 13,
+        "parse_fcoe": 14,
+        "parse_geneve": 15,
+        "parse_gpe_int_header": 16,
+        "parse_gre": 17,
+        "parse_gre_ipv4": 18,
+        "parse_gre_ipv6": 19,
+        "parse_gre_v6": 20,
+        "parse_icmp": 21,
+        "parse_inner_ethernet": 22,
+        "parse_inner_icmp": 23,
+        "parse_inner_ipv4": 24,
+        "parse_inner_ipv6": 25,
+        "parse_inner_sctp": 26,
+        "parse_inner_tcp": 27,
+        "parse_inner_udp": 28,
+        "parse_int_header": 29,
+        "parse_int_val": 30,
+        "parse_ipv4": 31,
+        "parse_ipv4_in_ip": 32,
+        "parse_ipv6": 33,
+        "parse_ipv6_in_ip": 34,
+        "parse_lisp": 35,
+        "parse_llc_header": 36,
+        "parse_mpls": 37,
+        "parse_mpls_bos": 38,
+        "parse_mpls_inner_ipv4": 39,
+        "parse_mpls_inner_ipv6": 40,
+        "parse_nsh": 41,
+        "parse_nvgre": 42,
+        "parse_pw": 43,
+        "parse_qinq": 44,
+        "parse_qinq_vlan": 45,
+        "parse_roce": 46,
+        "parse_roce_v2": 47,
+        "parse_sctp": 48,
+        "parse_set_prio_high": 49,
+        "parse_set_prio_max": 50,
+        "parse_set_prio_med": 51,
+        "parse_sflow": 52,
+        "parse_snap_header": 53,
+        "parse_tcp": 54,
+        "parse_trill": 55,
+        "parse_udp": 56,
+        "parse_udp_v6": 57,
+        "parse_vlan": 58,
+        "parse_vntag": 59,
+        "parse_vpls": 60,
+        "parse_vxlan": 61,
+        "parse_vxlan_gpe": 62,
+        "start": 63,
+        "accept": 64
+      },
+      "edges": [
+        {
+          "src": "parse_all_int_meta_value_heders",
+          "dst": "parse_int_val",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "parse_arp_rarp",
+          "dst": "parse_arp_rarp_ipv4",
+          "condition": "16w0x800",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_arp_rarp",
+          "dst": "accept",
+          "condition": "default",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_arp_rarp_ipv4",
+          "dst": "parse_set_prio_med",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "parse_bfd",
+          "dst": "parse_set_prio_max",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "parse_eompls",
+          "dst": "parse_inner_ethernet",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "parse_erspan_t3",
+          "dst": "parse_inner_ethernet",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "parse_ethernet",
+          "dst": "parse_llc_header",
+          "condition": "16w0 &&& 16w0xfe00",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_ethernet",
+          "dst": "parse_fabric_header",
+          "condition": "16w0x9000",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_ethernet",
+          "dst": "parse_vlan",
+          "condition": "16w0x8100",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_ethernet",
+          "dst": "parse_qinq",
+          "condition": "16w0x9100",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_ethernet",
+          "dst": "parse_mpls",
+          "condition": "16w0x8847",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_ethernet",
+          "dst": "parse_ipv4",
+          "condition": "16w0x800",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_ethernet",
+          "dst": "parse_ipv6",
+          "condition": "16w0x86dd",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_ethernet",
+          "dst": "parse_arp_rarp",
+          "condition": "16w0x806",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_ethernet",
+          "dst": "parse_set_prio_high",
+          "condition": "16w0x88cc",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_ethernet",
+          "dst": "accept",
+          "condition": "default",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_fabric_header",
+          "dst": "parse_fabric_header_unicast",
+          "condition": "3w1",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_fabric_header",
+          "dst": "parse_fabric_header_multicast",
+          "condition": "3w2",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_fabric_header",
+          "dst": "parse_fabric_header_mirror",
+          "condition": "3w3",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_fabric_header",
+          "dst": "parse_fabric_header_cpu",
+          "condition": "3w5",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_fabric_header",
+          "dst": "accept",
+          "condition": "default",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_fabric_header_cpu",
+          "dst": "parse_fabric_sflow_header",
+          "condition": "16w0x4",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_fabric_header_cpu",
+          "dst": "parse_fabric_payload_header",
+          "condition": "default",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_fabric_header_mirror",
+          "dst": "parse_fabric_payload_header",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "parse_fabric_header_multicast",
+          "dst": "parse_fabric_payload_header",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "parse_fabric_header_unicast",
+          "dst": "parse_fabric_payload_header",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "parse_fabric_payload_header",
+          "dst": "parse_llc_header",
+          "condition": "16w0 &&& 16w0xfe00",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_fabric_payload_header",
+          "dst": "parse_vlan",
+          "condition": "16w0x8100",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_fabric_payload_header",
+          "dst": "parse_qinq",
+          "condition": "16w0x9100",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_fabric_payload_header",
+          "dst": "parse_mpls",
+          "condition": "16w0x8847",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_fabric_payload_header",
+          "dst": "parse_ipv4",
+          "condition": "16w0x800",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_fabric_payload_header",
+          "dst": "parse_ipv6",
+          "condition": "16w0x86dd",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_fabric_payload_header",
+          "dst": "parse_arp_rarp",
+          "condition": "16w0x806",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_fabric_payload_header",
+          "dst": "parse_set_prio_high",
+          "condition": "16w0x88cc",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_fabric_payload_header",
+          "dst": "accept",
+          "condition": "default",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_fabric_sflow_header",
+          "dst": "parse_fabric_payload_header",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "parse_fcoe",
+          "dst": "accept",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "parse_geneve",
+          "dst": "parse_inner_ethernet",
+          "condition": "(2w0x0, 6w0x0, 16w0x6558)",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_geneve",
+          "dst": "parse_inner_ipv4",
+          "condition": "(2w0x0, 6w0x0, 16w0x800)",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_geneve",
+          "dst": "parse_inner_ipv6",
+          "condition": "(2w0x0, 6w0x0, 16w0x86dd)",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_geneve",
+          "dst": "accept",
+          "condition": "default",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_gpe_int_header",
+          "dst": "parse_int_header",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "parse_gre",
+          "dst": "parse_nvgre",
+          "condition": "(1w0x0, 1w0x0, 1w0x1, 1w0x0, 1w0x0, 3w0x0, 5w0x0, 3w0x0, 16w0x6558)",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_gre",
+          "dst": "parse_gre_ipv4",
+          "condition": "(1w0x0, 1w0x0, 1w0x0, 1w0x0, 1w0x0, 3w0x0, 5w0x0, 3w0x0, 16w0x800)",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_gre",
+          "dst": "parse_gre_ipv6",
+          "condition": "(1w0x0, 1w0x0, 1w0x0, 1w0x0, 1w0x0, 3w0x0, 5w0x0, 3w0x0, 16w0x86dd)",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_gre",
+          "dst": "parse_erspan_t3",
+          "condition": "(1w0x0, 1w0x0, 1w0x0, 1w0x0, 1w0x0, 3w0x0, 5w0x0, 3w0x0, 16w0x22eb)",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_gre",
+          "dst": "accept",
+          "condition": "default",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_gre_ipv4",
+          "dst": "parse_inner_ipv4",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "parse_gre_ipv6",
+          "dst": "parse_inner_ipv6",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "parse_gre_v6",
+          "dst": "parse_gre_ipv4",
+          "condition": "(1w0x0, 1w0x0, 1w0x0, 1w0x0, 1w0x0, 3w0x0, 5w0x0, 3w0x0, 16w0x800)",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_gre_v6",
+          "dst": "accept",
+          "condition": "default",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_icmp",
+          "dst": "parse_set_prio_med",
+          "condition": "16w0x8200 &&& 16w0xfe00",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_icmp",
+          "dst": "accept",
+          "condition": "default",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_inner_ethernet",
+          "dst": "parse_inner_ipv4",
+          "condition": "16w0x800",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_inner_ethernet",
+          "dst": "parse_inner_ipv6",
+          "condition": "16w0x86dd",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_inner_ethernet",
+          "dst": "accept",
+          "condition": "default",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_inner_icmp",
+          "dst": "accept",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "parse_inner_ipv4",
+          "dst": "parse_inner_icmp",
+          "condition": "(13w0x0, 4w0x5, 8w0x1)",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_inner_ipv4",
+          "dst": "parse_inner_tcp",
+          "condition": "(13w0x0, 4w0x5, 8w0x6)",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_inner_ipv4",
+          "dst": "parse_inner_udp",
+          "condition": "(13w0x0, 4w0x5, 8w0x11)",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_inner_ipv4",
+          "dst": "accept",
+          "condition": "default",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_inner_ipv6",
+          "dst": "parse_inner_icmp",
+          "condition": "8w58",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_inner_ipv6",
+          "dst": "parse_inner_tcp",
+          "condition": "8w6",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_inner_ipv6",
+          "dst": "parse_inner_udp",
+          "condition": "8w17",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_inner_ipv6",
+          "dst": "accept",
+          "condition": "default",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_inner_sctp",
+          "dst": "accept",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "parse_inner_tcp",
+          "dst": "accept",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "parse_inner_udp",
+          "dst": "accept",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "parse_int_header",
+          "dst": "accept",
+          "condition": "(5w0x0, 8w0x0)",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_int_header",
+          "dst": "parse_int_val",
+          "condition": "(5w0x0 &&& 5w0xf, 8w0x0 &&& 8w0x0)",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_int_header",
+          "dst": "parse_all_int_meta_value_heders",
+          "condition": "default",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_int_val",
+          "dst": "parse_inner_ethernet",
+          "condition": "1w1",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_ipv4",
+          "dst": "parse_icmp",
+          "condition": "(13w0x0, 4w0x5, 8w0x1)",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_ipv4",
+          "dst": "parse_tcp",
+          "condition": "(13w0x0, 4w0x5, 8w0x6)",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_ipv4",
+          "dst": "parse_udp",
+          "condition": "(13w0x0, 4w0x5, 8w0x11)",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_ipv4",
+          "dst": "parse_gre",
+          "condition": "(13w0x0, 4w0x5, 8w0x2f)",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_ipv4",
+          "dst": "parse_ipv4_in_ip",
+          "condition": "(13w0x0, 4w0x5, 8w0x4)",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_ipv4",
+          "dst": "parse_ipv6_in_ip",
+          "condition": "(13w0x0, 4w0x5, 8w0x29)",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_ipv4",
+          "dst": "parse_set_prio_med",
+          "condition": "(13w0, 4w0, 8w2)",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_ipv4",
+          "dst": "accept",
+          "condition": "default",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_ipv4_in_ip",
+          "dst": "parse_inner_ipv4",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "parse_ipv6",
+          "dst": "parse_icmp",
+          "condition": "8w58",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_ipv6",
+          "dst": "parse_tcp",
+          "condition": "8w6",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_ipv6",
+          "dst": "parse_ipv4_in_ip",
+          "condition": "8w4",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_ipv6",
+          "dst": "parse_udp",
+          "condition": "8w17",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_ipv6",
+          "dst": "parse_gre",
+          "condition": "8w47",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_ipv6",
+          "dst": "parse_ipv6_in_ip",
+          "condition": "8w41",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_ipv6",
+          "dst": "parse_set_prio_med",
+          "condition": "8w88",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_ipv6",
+          "dst": "accept",
+          "condition": "default",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_ipv6_in_ip",
+          "dst": "parse_inner_ipv6",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "parse_lisp",
+          "dst": "parse_inner_ipv4",
+          "condition": "4w0x4",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_lisp",
+          "dst": "parse_inner_ipv6",
+          "condition": "4w0x6",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_lisp",
+          "dst": "accept",
+          "condition": "default",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_llc_header",
+          "dst": "parse_snap_header",
+          "condition": "(8w0xaa, 8w0xaa)",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_llc_header",
+          "dst": "parse_set_prio_med",
+          "condition": "(8w0xfe, 8w0xfe)",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_llc_header",
+          "dst": "accept",
+          "condition": "default",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_mpls",
+          "dst": "parse_mpls_bos",
+          "condition": "1w1",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_mpls",
+          "dst": "accept",
+          "condition": "default",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_mpls_bos",
+          "dst": "parse_mpls_inner_ipv4",
+          "condition": "4w0x4",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_mpls_bos",
+          "dst": "parse_mpls_inner_ipv6",
+          "condition": "4w0x6",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_mpls_bos",
+          "dst": "parse_eompls",
+          "condition": "default",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_mpls_inner_ipv4",
+          "dst": "parse_inner_ipv4",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "parse_mpls_inner_ipv6",
+          "dst": "parse_inner_ipv6",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "parse_nsh",
+          "dst": "parse_inner_ipv4",
+          "condition": "16w0x800",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_nsh",
+          "dst": "parse_inner_ipv6",
+          "condition": "16w0x86dd",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_nsh",
+          "dst": "parse_inner_ethernet",
+          "condition": "16w0x6558",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_nsh",
+          "dst": "accept",
+          "condition": "default",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_nvgre",
+          "dst": "parse_inner_ethernet",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "parse_pw",
+          "dst": "accept",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "parse_qinq",
+          "dst": "parse_qinq_vlan",
+          "condition": "16w0x8100",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_qinq",
+          "dst": "accept",
+          "condition": "default",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_qinq_vlan",
+          "dst": "parse_mpls",
+          "condition": "16w0x8847",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_qinq_vlan",
+          "dst": "parse_ipv4",
+          "condition": "16w0x800",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_qinq_vlan",
+          "dst": "parse_ipv6",
+          "condition": "16w0x86dd",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_qinq_vlan",
+          "dst": "parse_arp_rarp",
+          "condition": "16w0x806",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_qinq_vlan",
+          "dst": "parse_set_prio_high",
+          "condition": "16w0x88cc",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_qinq_vlan",
+          "dst": "accept",
+          "condition": "default",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_roce",
+          "dst": "accept",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "parse_roce_v2",
+          "dst": "accept",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "parse_sctp",
+          "dst": "accept",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "parse_set_prio_high",
+          "dst": "accept",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "parse_set_prio_max",
+          "dst": "accept",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "parse_set_prio_med",
+          "dst": "accept",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "parse_sflow",
+          "dst": "accept",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "parse_snap_header",
+          "dst": "parse_vlan",
+          "condition": "16w0x8100",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_snap_header",
+          "dst": "parse_qinq",
+          "condition": "16w0x9100",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_snap_header",
+          "dst": "parse_mpls",
+          "condition": "16w0x8847",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_snap_header",
+          "dst": "parse_ipv4",
+          "condition": "16w0x800",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_snap_header",
+          "dst": "parse_ipv6",
+          "condition": "16w0x86dd",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_snap_header",
+          "dst": "parse_arp_rarp",
+          "condition": "16w0x806",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_snap_header",
+          "dst": "parse_set_prio_high",
+          "condition": "16w0x88cc",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_snap_header",
+          "dst": "accept",
+          "condition": "default",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_tcp",
+          "dst": "parse_set_prio_med",
+          "condition": "16w179",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_tcp",
+          "dst": "accept",
+          "condition": "default",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_trill",
+          "dst": "parse_inner_ethernet",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "parse_udp",
+          "dst": "parse_vxlan",
+          "condition": "16w4789",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_udp",
+          "dst": "parse_geneve",
+          "condition": "16w6081",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_udp",
+          "dst": "parse_vxlan_gpe",
+          "condition": "16w4790",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_udp",
+          "dst": "parse_set_prio_med",
+          "condition": "16w67",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_udp",
+          "dst": "parse_sflow",
+          "condition": "16w6343",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_udp",
+          "dst": "accept",
+          "condition": "default",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_udp_v6",
+          "dst": "parse_set_prio_med",
+          "condition": "16w67",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_udp_v6",
+          "dst": "accept",
+          "condition": "default",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_vlan",
+          "dst": "parse_mpls",
+          "condition": "16w0x8847",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_vlan",
+          "dst": "parse_ipv4",
+          "condition": "16w0x800",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_vlan",
+          "dst": "parse_ipv6",
+          "condition": "16w0x86dd",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_vlan",
+          "dst": "parse_arp_rarp",
+          "condition": "16w0x806",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_vlan",
+          "dst": "parse_set_prio_high",
+          "condition": "16w0x88cc",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_vlan",
+          "dst": "accept",
+          "condition": "default",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_vntag",
+          "dst": "parse_inner_ethernet",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "parse_vpls",
+          "dst": "accept",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "parse_vxlan",
+          "dst": "parse_inner_ethernet",
+          "condition": "always",
+          "transition_type": "direct"
+        },
+        {
+          "src": "parse_vxlan_gpe",
+          "dst": "parse_gpe_int_header",
+          "condition": "(8w0x8 &&& 8w0x8, 8w0x5)",
+          "transition_type": "select"
+        },
+        {
+          "src": "parse_vxlan_gpe",
+          "dst": "parse_inner_ethernet",
+          "condition": "default",
+          "transition_type": "select"
+        },
+        {
+          "src": "start",
+          "dst": "parse_ethernet",
+          "condition": "always",
+          "transition_type": "direct"
+        }
+      ],
+      "sparse_matrix": {
+        "format": "coo",
+        "shape": [
+          65,
+          65
+        ],
+        "rows": [
+          0,
+          1,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8,
+          8,
+          9,
+          10,
+          11,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          13,
+          14,
+          15,
+          15,
+          15,
+          15,
+          16,
+          17,
+          17,
+          17,
+          17,
+          17,
+          18,
+          19,
+          20,
+          20,
+          21,
+          21,
+          21,
+          21,
+          22,
+          22,
+          22,
+          23,
+          24,
+          24,
+          24,
+          24,
+          25,
+          25,
+          25,
+          25,
+          26,
+          27,
+          28,
+          29,
+          29,
+          29,
+          29,
+          30,
+          31,
+          31,
+          31,
+          31,
+          31,
+          31,
+          31,
+          31,
+          31,
+          31,
+          31,
+          31,
+          32,
+          33,
+          33,
+          33,
+          33,
+          33,
+          33,
+          33,
+          33,
+          33,
+          33,
+          33,
+          34,
+          35,
+          35,
+          35,
+          36,
+          36,
+          36,
+          37,
+          37,
+          38,
+          38,
+          38,
+          39,
+          40,
+          41,
+          41,
+          41,
+          41,
+          42,
+          43,
+          44,
+          44,
+          45,
+          45,
+          45,
+          45,
+          45,
+          45,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          53,
+          53,
+          53,
+          53,
+          53,
+          53,
+          53,
+          53,
+          54,
+          54,
+          54,
+          55,
+          56,
+          56,
+          56,
+          56,
+          56,
+          56,
+          56,
+          56,
+          56,
+          56,
+          56,
+          56,
+          57,
+          57,
+          57,
+          57,
+          57,
+          57,
+          57,
+          57,
+          58,
+          58,
+          58,
+          58,
+          58,
+          58,
+          58,
+          59,
+          60,
+          61,
+          62,
+          62,
+          63
+        ],
+        "cols": [
+          30,
+          2,
+          64,
+          51,
+          50,
+          22,
+          22,
+          36,
+          36,
+          7,
+          58,
+          44,
+          37,
+          31,
+          33,
+          1,
+          49,
+          49,
+          64,
+          11,
+          10,
+          9,
+          8,
+          64,
+          13,
+          12,
+          12,
+          12,
+          12,
+          36,
+          36,
+          58,
+          44,
+          37,
+          31,
+          33,
+          1,
+          49,
+          49,
+          64,
+          12,
+          64,
+          22,
+          24,
+          25,
+          64,
+          29,
+          42,
+          18,
+          19,
+          5,
+          64,
+          24,
+          25,
+          18,
+          64,
+          51,
+          51,
+          51,
+          64,
+          24,
+          25,
+          64,
+          64,
+          23,
+          27,
+          28,
+          64,
+          23,
+          27,
+          28,
+          64,
+          64,
+          64,
+          64,
+          64,
+          30,
+          64,
+          0,
+          22,
+          21,
+          54,
+          56,
+          17,
+          32,
+          34,
+          51,
+          51,
+          51,
+          51,
+          51,
+          64,
+          24,
+          21,
+          54,
+          32,
+          56,
+          17,
+          34,
+          51,
+          51,
+          51,
+          51,
+          64,
+          25,
+          24,
+          25,
+          64,
+          53,
+          51,
+          64,
+          38,
+          64,
+          39,
+          40,
+          4,
+          24,
+          25,
+          24,
+          25,
+          22,
+          64,
+          22,
+          64,
+          45,
+          64,
+          37,
+          31,
+          33,
+          1,
+          49,
+          49,
+          64,
+          64,
+          64,
+          64,
+          64,
+          64,
+          64,
+          64,
+          58,
+          44,
+          37,
+          31,
+          33,
+          1,
+          49,
+          49,
+          64,
+          51,
+          51,
+          64,
+          22,
+          61,
+          15,
+          62,
+          51,
+          51,
+          51,
+          51,
+          51,
+          51,
+          51,
+          52,
+          64,
+          51,
+          51,
+          51,
+          51,
+          51,
+          51,
+          51,
+          64,
+          37,
+          31,
+          33,
+          1,
+          49,
+          49,
+          64,
+          22,
+          64,
+          22,
+          16,
+          22,
+          6
+        ],
+        "data": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "entries": [
+          {
+            "row": 0,
+            "col": 30,
+            "value": 1,
+            "src": "parse_all_int_meta_value_heders",
+            "dst": "parse_int_val",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 1,
+            "col": 2,
+            "value": 1,
+            "src": "parse_arp_rarp",
+            "dst": "parse_arp_rarp_ipv4",
+            "condition": "16w0x800",
+            "transition_type": "select"
+          },
+          {
+            "row": 1,
+            "col": 64,
+            "value": 1,
+            "src": "parse_arp_rarp",
+            "dst": "accept",
+            "condition": "default",
+            "transition_type": "select"
+          },
+          {
+            "row": 2,
+            "col": 51,
+            "value": 1,
+            "src": "parse_arp_rarp_ipv4",
+            "dst": "parse_set_prio_med",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 3,
+            "col": 50,
+            "value": 1,
+            "src": "parse_bfd",
+            "dst": "parse_set_prio_max",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 4,
+            "col": 22,
+            "value": 1,
+            "src": "parse_eompls",
+            "dst": "parse_inner_ethernet",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 5,
+            "col": 22,
+            "value": 1,
+            "src": "parse_erspan_t3",
+            "dst": "parse_inner_ethernet",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 6,
+            "col": 36,
+            "value": 1,
+            "src": "parse_ethernet",
+            "dst": "parse_llc_header",
+            "condition": "16w0 &&& 16w0xfe00",
+            "transition_type": "select"
+          },
+          {
+            "row": 6,
+            "col": 36,
+            "value": 1,
+            "src": "parse_ethernet",
+            "dst": "parse_llc_header",
+            "condition": "16w0 &&& 16w0xfa00",
+            "transition_type": "select"
+          },
+          {
+            "row": 6,
+            "col": 7,
+            "value": 1,
+            "src": "parse_ethernet",
+            "dst": "parse_fabric_header",
+            "condition": "16w0x9000",
+            "transition_type": "select"
+          },
+          {
+            "row": 6,
+            "col": 58,
+            "value": 1,
+            "src": "parse_ethernet",
+            "dst": "parse_vlan",
+            "condition": "16w0x8100",
+            "transition_type": "select"
+          },
+          {
+            "row": 6,
+            "col": 44,
+            "value": 1,
+            "src": "parse_ethernet",
+            "dst": "parse_qinq",
+            "condition": "16w0x9100",
+            "transition_type": "select"
+          },
+          {
+            "row": 6,
+            "col": 37,
+            "value": 1,
+            "src": "parse_ethernet",
+            "dst": "parse_mpls",
+            "condition": "16w0x8847",
+            "transition_type": "select"
+          },
+          {
+            "row": 6,
+            "col": 31,
+            "value": 1,
+            "src": "parse_ethernet",
+            "dst": "parse_ipv4",
+            "condition": "16w0x800",
+            "transition_type": "select"
+          },
+          {
+            "row": 6,
+            "col": 33,
+            "value": 1,
+            "src": "parse_ethernet",
+            "dst": "parse_ipv6",
+            "condition": "16w0x86dd",
+            "transition_type": "select"
+          },
+          {
+            "row": 6,
+            "col": 1,
+            "value": 1,
+            "src": "parse_ethernet",
+            "dst": "parse_arp_rarp",
+            "condition": "16w0x806",
+            "transition_type": "select"
+          },
+          {
+            "row": 6,
+            "col": 49,
+            "value": 1,
+            "src": "parse_ethernet",
+            "dst": "parse_set_prio_high",
+            "condition": "16w0x88cc",
+            "transition_type": "select"
+          },
+          {
+            "row": 6,
+            "col": 49,
+            "value": 1,
+            "src": "parse_ethernet",
+            "dst": "parse_set_prio_high",
+            "condition": "16w0x8809",
+            "transition_type": "select"
+          },
+          {
+            "row": 6,
+            "col": 64,
+            "value": 1,
+            "src": "parse_ethernet",
+            "dst": "accept",
+            "condition": "default",
+            "transition_type": "select"
+          },
+          {
+            "row": 7,
+            "col": 11,
+            "value": 1,
+            "src": "parse_fabric_header",
+            "dst": "parse_fabric_header_unicast",
+            "condition": "3w1",
+            "transition_type": "select"
+          },
+          {
+            "row": 7,
+            "col": 10,
+            "value": 1,
+            "src": "parse_fabric_header",
+            "dst": "parse_fabric_header_multicast",
+            "condition": "3w2",
+            "transition_type": "select"
+          },
+          {
+            "row": 7,
+            "col": 9,
+            "value": 1,
+            "src": "parse_fabric_header",
+            "dst": "parse_fabric_header_mirror",
+            "condition": "3w3",
+            "transition_type": "select"
+          },
+          {
+            "row": 7,
+            "col": 8,
+            "value": 1,
+            "src": "parse_fabric_header",
+            "dst": "parse_fabric_header_cpu",
+            "condition": "3w5",
+            "transition_type": "select"
+          },
+          {
+            "row": 7,
+            "col": 64,
+            "value": 1,
+            "src": "parse_fabric_header",
+            "dst": "accept",
+            "condition": "default",
+            "transition_type": "select"
+          },
+          {
+            "row": 8,
+            "col": 13,
+            "value": 1,
+            "src": "parse_fabric_header_cpu",
+            "dst": "parse_fabric_sflow_header",
+            "condition": "16w0x4",
+            "transition_type": "select"
+          },
+          {
+            "row": 8,
+            "col": 12,
+            "value": 1,
+            "src": "parse_fabric_header_cpu",
+            "dst": "parse_fabric_payload_header",
+            "condition": "default",
+            "transition_type": "select"
+          },
+          {
+            "row": 9,
+            "col": 12,
+            "value": 1,
+            "src": "parse_fabric_header_mirror",
+            "dst": "parse_fabric_payload_header",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 10,
+            "col": 12,
+            "value": 1,
+            "src": "parse_fabric_header_multicast",
+            "dst": "parse_fabric_payload_header",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 11,
+            "col": 12,
+            "value": 1,
+            "src": "parse_fabric_header_unicast",
+            "dst": "parse_fabric_payload_header",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 12,
+            "col": 36,
+            "value": 1,
+            "src": "parse_fabric_payload_header",
+            "dst": "parse_llc_header",
+            "condition": "16w0 &&& 16w0xfe00",
+            "transition_type": "select"
+          },
+          {
+            "row": 12,
+            "col": 36,
+            "value": 1,
+            "src": "parse_fabric_payload_header",
+            "dst": "parse_llc_header",
+            "condition": "16w0 &&& 16w0xfa00",
+            "transition_type": "select"
+          },
+          {
+            "row": 12,
+            "col": 58,
+            "value": 1,
+            "src": "parse_fabric_payload_header",
+            "dst": "parse_vlan",
+            "condition": "16w0x8100",
+            "transition_type": "select"
+          },
+          {
+            "row": 12,
+            "col": 44,
+            "value": 1,
+            "src": "parse_fabric_payload_header",
+            "dst": "parse_qinq",
+            "condition": "16w0x9100",
+            "transition_type": "select"
+          },
+          {
+            "row": 12,
+            "col": 37,
+            "value": 1,
+            "src": "parse_fabric_payload_header",
+            "dst": "parse_mpls",
+            "condition": "16w0x8847",
+            "transition_type": "select"
+          },
+          {
+            "row": 12,
+            "col": 31,
+            "value": 1,
+            "src": "parse_fabric_payload_header",
+            "dst": "parse_ipv4",
+            "condition": "16w0x800",
+            "transition_type": "select"
+          },
+          {
+            "row": 12,
+            "col": 33,
+            "value": 1,
+            "src": "parse_fabric_payload_header",
+            "dst": "parse_ipv6",
+            "condition": "16w0x86dd",
+            "transition_type": "select"
+          },
+          {
+            "row": 12,
+            "col": 1,
+            "value": 1,
+            "src": "parse_fabric_payload_header",
+            "dst": "parse_arp_rarp",
+            "condition": "16w0x806",
+            "transition_type": "select"
+          },
+          {
+            "row": 12,
+            "col": 49,
+            "value": 1,
+            "src": "parse_fabric_payload_header",
+            "dst": "parse_set_prio_high",
+            "condition": "16w0x88cc",
+            "transition_type": "select"
+          },
+          {
+            "row": 12,
+            "col": 49,
+            "value": 1,
+            "src": "parse_fabric_payload_header",
+            "dst": "parse_set_prio_high",
+            "condition": "16w0x8809",
+            "transition_type": "select"
+          },
+          {
+            "row": 12,
+            "col": 64,
+            "value": 1,
+            "src": "parse_fabric_payload_header",
+            "dst": "accept",
+            "condition": "default",
+            "transition_type": "select"
+          },
+          {
+            "row": 13,
+            "col": 12,
+            "value": 1,
+            "src": "parse_fabric_sflow_header",
+            "dst": "parse_fabric_payload_header",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 14,
+            "col": 64,
+            "value": 1,
+            "src": "parse_fcoe",
+            "dst": "accept",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 15,
+            "col": 22,
+            "value": 1,
+            "src": "parse_geneve",
+            "dst": "parse_inner_ethernet",
+            "condition": "(2w0x0, 6w0x0, 16w0x6558)",
+            "transition_type": "select"
+          },
+          {
+            "row": 15,
+            "col": 24,
+            "value": 1,
+            "src": "parse_geneve",
+            "dst": "parse_inner_ipv4",
+            "condition": "(2w0x0, 6w0x0, 16w0x800)",
+            "transition_type": "select"
+          },
+          {
+            "row": 15,
+            "col": 25,
+            "value": 1,
+            "src": "parse_geneve",
+            "dst": "parse_inner_ipv6",
+            "condition": "(2w0x0, 6w0x0, 16w0x86dd)",
+            "transition_type": "select"
+          },
+          {
+            "row": 15,
+            "col": 64,
+            "value": 1,
+            "src": "parse_geneve",
+            "dst": "accept",
+            "condition": "default",
+            "transition_type": "select"
+          },
+          {
+            "row": 16,
+            "col": 29,
+            "value": 1,
+            "src": "parse_gpe_int_header",
+            "dst": "parse_int_header",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 17,
+            "col": 42,
+            "value": 1,
+            "src": "parse_gre",
+            "dst": "parse_nvgre",
+            "condition": "(1w0x0, 1w0x0, 1w0x1, 1w0x0, 1w0x0, 3w0x0, 5w0x0, 3w0x0, 16w0x6558)",
+            "transition_type": "select"
+          },
+          {
+            "row": 17,
+            "col": 18,
+            "value": 1,
+            "src": "parse_gre",
+            "dst": "parse_gre_ipv4",
+            "condition": "(1w0x0, 1w0x0, 1w0x0, 1w0x0, 1w0x0, 3w0x0, 5w0x0, 3w0x0, 16w0x800)",
+            "transition_type": "select"
+          },
+          {
+            "row": 17,
+            "col": 19,
+            "value": 1,
+            "src": "parse_gre",
+            "dst": "parse_gre_ipv6",
+            "condition": "(1w0x0, 1w0x0, 1w0x0, 1w0x0, 1w0x0, 3w0x0, 5w0x0, 3w0x0, 16w0x86dd)",
+            "transition_type": "select"
+          },
+          {
+            "row": 17,
+            "col": 5,
+            "value": 1,
+            "src": "parse_gre",
+            "dst": "parse_erspan_t3",
+            "condition": "(1w0x0, 1w0x0, 1w0x0, 1w0x0, 1w0x0, 3w0x0, 5w0x0, 3w0x0, 16w0x22eb)",
+            "transition_type": "select"
+          },
+          {
+            "row": 17,
+            "col": 64,
+            "value": 1,
+            "src": "parse_gre",
+            "dst": "accept",
+            "condition": "default",
+            "transition_type": "select"
+          },
+          {
+            "row": 18,
+            "col": 24,
+            "value": 1,
+            "src": "parse_gre_ipv4",
+            "dst": "parse_inner_ipv4",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 19,
+            "col": 25,
+            "value": 1,
+            "src": "parse_gre_ipv6",
+            "dst": "parse_inner_ipv6",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 20,
+            "col": 18,
+            "value": 1,
+            "src": "parse_gre_v6",
+            "dst": "parse_gre_ipv4",
+            "condition": "(1w0x0, 1w0x0, 1w0x0, 1w0x0, 1w0x0, 3w0x0, 5w0x0, 3w0x0, 16w0x800)",
+            "transition_type": "select"
+          },
+          {
+            "row": 20,
+            "col": 64,
+            "value": 1,
+            "src": "parse_gre_v6",
+            "dst": "accept",
+            "condition": "default",
+            "transition_type": "select"
+          },
+          {
+            "row": 21,
+            "col": 51,
+            "value": 1,
+            "src": "parse_icmp",
+            "dst": "parse_set_prio_med",
+            "condition": "16w0x8200 &&& 16w0xfe00",
+            "transition_type": "select"
+          },
+          {
+            "row": 21,
+            "col": 51,
+            "value": 1,
+            "src": "parse_icmp",
+            "dst": "parse_set_prio_med",
+            "condition": "16w0x8400 &&& 16w0xfc00",
+            "transition_type": "select"
+          },
+          {
+            "row": 21,
+            "col": 51,
+            "value": 1,
+            "src": "parse_icmp",
+            "dst": "parse_set_prio_med",
+            "condition": "16w0x8800 &&& 16w0xff00",
+            "transition_type": "select"
+          },
+          {
+            "row": 21,
+            "col": 64,
+            "value": 1,
+            "src": "parse_icmp",
+            "dst": "accept",
+            "condition": "default",
+            "transition_type": "select"
+          },
+          {
+            "row": 22,
+            "col": 24,
+            "value": 1,
+            "src": "parse_inner_ethernet",
+            "dst": "parse_inner_ipv4",
+            "condition": "16w0x800",
+            "transition_type": "select"
+          },
+          {
+            "row": 22,
+            "col": 25,
+            "value": 1,
+            "src": "parse_inner_ethernet",
+            "dst": "parse_inner_ipv6",
+            "condition": "16w0x86dd",
+            "transition_type": "select"
+          },
+          {
+            "row": 22,
+            "col": 64,
+            "value": 1,
+            "src": "parse_inner_ethernet",
+            "dst": "accept",
+            "condition": "default",
+            "transition_type": "select"
+          },
+          {
+            "row": 23,
+            "col": 64,
+            "value": 1,
+            "src": "parse_inner_icmp",
+            "dst": "accept",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 24,
+            "col": 23,
+            "value": 1,
+            "src": "parse_inner_ipv4",
+            "dst": "parse_inner_icmp",
+            "condition": "(13w0x0, 4w0x5, 8w0x1)",
+            "transition_type": "select"
+          },
+          {
+            "row": 24,
+            "col": 27,
+            "value": 1,
+            "src": "parse_inner_ipv4",
+            "dst": "parse_inner_tcp",
+            "condition": "(13w0x0, 4w0x5, 8w0x6)",
+            "transition_type": "select"
+          },
+          {
+            "row": 24,
+            "col": 28,
+            "value": 1,
+            "src": "parse_inner_ipv4",
+            "dst": "parse_inner_udp",
+            "condition": "(13w0x0, 4w0x5, 8w0x11)",
+            "transition_type": "select"
+          },
+          {
+            "row": 24,
+            "col": 64,
+            "value": 1,
+            "src": "parse_inner_ipv4",
+            "dst": "accept",
+            "condition": "default",
+            "transition_type": "select"
+          },
+          {
+            "row": 25,
+            "col": 23,
+            "value": 1,
+            "src": "parse_inner_ipv6",
+            "dst": "parse_inner_icmp",
+            "condition": "8w58",
+            "transition_type": "select"
+          },
+          {
+            "row": 25,
+            "col": 27,
+            "value": 1,
+            "src": "parse_inner_ipv6",
+            "dst": "parse_inner_tcp",
+            "condition": "8w6",
+            "transition_type": "select"
+          },
+          {
+            "row": 25,
+            "col": 28,
+            "value": 1,
+            "src": "parse_inner_ipv6",
+            "dst": "parse_inner_udp",
+            "condition": "8w17",
+            "transition_type": "select"
+          },
+          {
+            "row": 25,
+            "col": 64,
+            "value": 1,
+            "src": "parse_inner_ipv6",
+            "dst": "accept",
+            "condition": "default",
+            "transition_type": "select"
+          },
+          {
+            "row": 26,
+            "col": 64,
+            "value": 1,
+            "src": "parse_inner_sctp",
+            "dst": "accept",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 27,
+            "col": 64,
+            "value": 1,
+            "src": "parse_inner_tcp",
+            "dst": "accept",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 28,
+            "col": 64,
+            "value": 1,
+            "src": "parse_inner_udp",
+            "dst": "accept",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 29,
+            "col": 64,
+            "value": 1,
+            "src": "parse_int_header",
+            "dst": "accept",
+            "condition": "(5w0x0, 8w0x0)",
+            "transition_type": "select"
+          },
+          {
+            "row": 29,
+            "col": 30,
+            "value": 1,
+            "src": "parse_int_header",
+            "dst": "parse_int_val",
+            "condition": "(5w0x0 &&& 5w0xf, 8w0x0 &&& 8w0x0)",
+            "transition_type": "select"
+          },
+          {
+            "row": 29,
+            "col": 64,
+            "value": 1,
+            "src": "parse_int_header",
+            "dst": "accept",
+            "condition": "default",
+            "transition_type": "select"
+          },
+          {
+            "row": 29,
+            "col": 0,
+            "value": 1,
+            "src": "parse_int_header",
+            "dst": "parse_all_int_meta_value_heders",
+            "condition": "default",
+            "transition_type": "select"
+          },
+          {
+            "row": 30,
+            "col": 22,
+            "value": 1,
+            "src": "parse_int_val",
+            "dst": "parse_inner_ethernet",
+            "condition": "1w1",
+            "transition_type": "select"
+          },
+          {
+            "row": 31,
+            "col": 21,
+            "value": 1,
+            "src": "parse_ipv4",
+            "dst": "parse_icmp",
+            "condition": "(13w0x0, 4w0x5, 8w0x1)",
+            "transition_type": "select"
+          },
+          {
+            "row": 31,
+            "col": 54,
+            "value": 1,
+            "src": "parse_ipv4",
+            "dst": "parse_tcp",
+            "condition": "(13w0x0, 4w0x5, 8w0x6)",
+            "transition_type": "select"
+          },
+          {
+            "row": 31,
+            "col": 56,
+            "value": 1,
+            "src": "parse_ipv4",
+            "dst": "parse_udp",
+            "condition": "(13w0x0, 4w0x5, 8w0x11)",
+            "transition_type": "select"
+          },
+          {
+            "row": 31,
+            "col": 17,
+            "value": 1,
+            "src": "parse_ipv4",
+            "dst": "parse_gre",
+            "condition": "(13w0x0, 4w0x5, 8w0x2f)",
+            "transition_type": "select"
+          },
+          {
+            "row": 31,
+            "col": 32,
+            "value": 1,
+            "src": "parse_ipv4",
+            "dst": "parse_ipv4_in_ip",
+            "condition": "(13w0x0, 4w0x5, 8w0x4)",
+            "transition_type": "select"
+          },
+          {
+            "row": 31,
+            "col": 34,
+            "value": 1,
+            "src": "parse_ipv4",
+            "dst": "parse_ipv6_in_ip",
+            "condition": "(13w0x0, 4w0x5, 8w0x29)",
+            "transition_type": "select"
+          },
+          {
+            "row": 31,
+            "col": 51,
+            "value": 1,
+            "src": "parse_ipv4",
+            "dst": "parse_set_prio_med",
+            "condition": "(13w0, 4w0, 8w2)",
+            "transition_type": "select"
+          },
+          {
+            "row": 31,
+            "col": 51,
+            "value": 1,
+            "src": "parse_ipv4",
+            "dst": "parse_set_prio_med",
+            "condition": "(13w0, 4w0, 8w88)",
+            "transition_type": "select"
+          },
+          {
+            "row": 31,
+            "col": 51,
+            "value": 1,
+            "src": "parse_ipv4",
+            "dst": "parse_set_prio_med",
+            "condition": "(13w0, 4w0, 8w89)",
+            "transition_type": "select"
+          },
+          {
+            "row": 31,
+            "col": 51,
+            "value": 1,
+            "src": "parse_ipv4",
+            "dst": "parse_set_prio_med",
+            "condition": "(13w0, 4w0, 8w103)",
+            "transition_type": "select"
+          },
+          {
+            "row": 31,
+            "col": 51,
+            "value": 1,
+            "src": "parse_ipv4",
+            "dst": "parse_set_prio_med",
+            "condition": "(13w0, 4w0, 8w112)",
+            "transition_type": "select"
+          },
+          {
+            "row": 31,
+            "col": 64,
+            "value": 1,
+            "src": "parse_ipv4",
+            "dst": "accept",
+            "condition": "default",
+            "transition_type": "select"
+          },
+          {
+            "row": 32,
+            "col": 24,
+            "value": 1,
+            "src": "parse_ipv4_in_ip",
+            "dst": "parse_inner_ipv4",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 33,
+            "col": 21,
+            "value": 1,
+            "src": "parse_ipv6",
+            "dst": "parse_icmp",
+            "condition": "8w58",
+            "transition_type": "select"
+          },
+          {
+            "row": 33,
+            "col": 54,
+            "value": 1,
+            "src": "parse_ipv6",
+            "dst": "parse_tcp",
+            "condition": "8w6",
+            "transition_type": "select"
+          },
+          {
+            "row": 33,
+            "col": 32,
+            "value": 1,
+            "src": "parse_ipv6",
+            "dst": "parse_ipv4_in_ip",
+            "condition": "8w4",
+            "transition_type": "select"
+          },
+          {
+            "row": 33,
+            "col": 56,
+            "value": 1,
+            "src": "parse_ipv6",
+            "dst": "parse_udp",
+            "condition": "8w17",
+            "transition_type": "select"
+          },
+          {
+            "row": 33,
+            "col": 17,
+            "value": 1,
+            "src": "parse_ipv6",
+            "dst": "parse_gre",
+            "condition": "8w47",
+            "transition_type": "select"
+          },
+          {
+            "row": 33,
+            "col": 34,
+            "value": 1,
+            "src": "parse_ipv6",
+            "dst": "parse_ipv6_in_ip",
+            "condition": "8w41",
+            "transition_type": "select"
+          },
+          {
+            "row": 33,
+            "col": 51,
+            "value": 1,
+            "src": "parse_ipv6",
+            "dst": "parse_set_prio_med",
+            "condition": "8w88",
+            "transition_type": "select"
+          },
+          {
+            "row": 33,
+            "col": 51,
+            "value": 1,
+            "src": "parse_ipv6",
+            "dst": "parse_set_prio_med",
+            "condition": "8w89",
+            "transition_type": "select"
+          },
+          {
+            "row": 33,
+            "col": 51,
+            "value": 1,
+            "src": "parse_ipv6",
+            "dst": "parse_set_prio_med",
+            "condition": "8w103",
+            "transition_type": "select"
+          },
+          {
+            "row": 33,
+            "col": 51,
+            "value": 1,
+            "src": "parse_ipv6",
+            "dst": "parse_set_prio_med",
+            "condition": "8w112",
+            "transition_type": "select"
+          },
+          {
+            "row": 33,
+            "col": 64,
+            "value": 1,
+            "src": "parse_ipv6",
+            "dst": "accept",
+            "condition": "default",
+            "transition_type": "select"
+          },
+          {
+            "row": 34,
+            "col": 25,
+            "value": 1,
+            "src": "parse_ipv6_in_ip",
+            "dst": "parse_inner_ipv6",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 35,
+            "col": 24,
+            "value": 1,
+            "src": "parse_lisp",
+            "dst": "parse_inner_ipv4",
+            "condition": "4w0x4",
+            "transition_type": "select"
+          },
+          {
+            "row": 35,
+            "col": 25,
+            "value": 1,
+            "src": "parse_lisp",
+            "dst": "parse_inner_ipv6",
+            "condition": "4w0x6",
+            "transition_type": "select"
+          },
+          {
+            "row": 35,
+            "col": 64,
+            "value": 1,
+            "src": "parse_lisp",
+            "dst": "accept",
+            "condition": "default",
+            "transition_type": "select"
+          },
+          {
+            "row": 36,
+            "col": 53,
+            "value": 1,
+            "src": "parse_llc_header",
+            "dst": "parse_snap_header",
+            "condition": "(8w0xaa, 8w0xaa)",
+            "transition_type": "select"
+          },
+          {
+            "row": 36,
+            "col": 51,
+            "value": 1,
+            "src": "parse_llc_header",
+            "dst": "parse_set_prio_med",
+            "condition": "(8w0xfe, 8w0xfe)",
+            "transition_type": "select"
+          },
+          {
+            "row": 36,
+            "col": 64,
+            "value": 1,
+            "src": "parse_llc_header",
+            "dst": "accept",
+            "condition": "default",
+            "transition_type": "select"
+          },
+          {
+            "row": 37,
+            "col": 38,
+            "value": 1,
+            "src": "parse_mpls",
+            "dst": "parse_mpls_bos",
+            "condition": "1w1",
+            "transition_type": "select"
+          },
+          {
+            "row": 37,
+            "col": 64,
+            "value": 1,
+            "src": "parse_mpls",
+            "dst": "accept",
+            "condition": "default",
+            "transition_type": "select"
+          },
+          {
+            "row": 38,
+            "col": 39,
+            "value": 1,
+            "src": "parse_mpls_bos",
+            "dst": "parse_mpls_inner_ipv4",
+            "condition": "4w0x4",
+            "transition_type": "select"
+          },
+          {
+            "row": 38,
+            "col": 40,
+            "value": 1,
+            "src": "parse_mpls_bos",
+            "dst": "parse_mpls_inner_ipv6",
+            "condition": "4w0x6",
+            "transition_type": "select"
+          },
+          {
+            "row": 38,
+            "col": 4,
+            "value": 1,
+            "src": "parse_mpls_bos",
+            "dst": "parse_eompls",
+            "condition": "default",
+            "transition_type": "select"
+          },
+          {
+            "row": 39,
+            "col": 24,
+            "value": 1,
+            "src": "parse_mpls_inner_ipv4",
+            "dst": "parse_inner_ipv4",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 40,
+            "col": 25,
+            "value": 1,
+            "src": "parse_mpls_inner_ipv6",
+            "dst": "parse_inner_ipv6",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 41,
+            "col": 24,
+            "value": 1,
+            "src": "parse_nsh",
+            "dst": "parse_inner_ipv4",
+            "condition": "16w0x800",
+            "transition_type": "select"
+          },
+          {
+            "row": 41,
+            "col": 25,
+            "value": 1,
+            "src": "parse_nsh",
+            "dst": "parse_inner_ipv6",
+            "condition": "16w0x86dd",
+            "transition_type": "select"
+          },
+          {
+            "row": 41,
+            "col": 22,
+            "value": 1,
+            "src": "parse_nsh",
+            "dst": "parse_inner_ethernet",
+            "condition": "16w0x6558",
+            "transition_type": "select"
+          },
+          {
+            "row": 41,
+            "col": 64,
+            "value": 1,
+            "src": "parse_nsh",
+            "dst": "accept",
+            "condition": "default",
+            "transition_type": "select"
+          },
+          {
+            "row": 42,
+            "col": 22,
+            "value": 1,
+            "src": "parse_nvgre",
+            "dst": "parse_inner_ethernet",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 43,
+            "col": 64,
+            "value": 1,
+            "src": "parse_pw",
+            "dst": "accept",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 44,
+            "col": 45,
+            "value": 1,
+            "src": "parse_qinq",
+            "dst": "parse_qinq_vlan",
+            "condition": "16w0x8100",
+            "transition_type": "select"
+          },
+          {
+            "row": 44,
+            "col": 64,
+            "value": 1,
+            "src": "parse_qinq",
+            "dst": "accept",
+            "condition": "default",
+            "transition_type": "select"
+          },
+          {
+            "row": 45,
+            "col": 37,
+            "value": 1,
+            "src": "parse_qinq_vlan",
+            "dst": "parse_mpls",
+            "condition": "16w0x8847",
+            "transition_type": "select"
+          },
+          {
+            "row": 45,
+            "col": 31,
+            "value": 1,
+            "src": "parse_qinq_vlan",
+            "dst": "parse_ipv4",
+            "condition": "16w0x800",
+            "transition_type": "select"
+          },
+          {
+            "row": 45,
+            "col": 33,
+            "value": 1,
+            "src": "parse_qinq_vlan",
+            "dst": "parse_ipv6",
+            "condition": "16w0x86dd",
+            "transition_type": "select"
+          },
+          {
+            "row": 45,
+            "col": 1,
+            "value": 1,
+            "src": "parse_qinq_vlan",
+            "dst": "parse_arp_rarp",
+            "condition": "16w0x806",
+            "transition_type": "select"
+          },
+          {
+            "row": 45,
+            "col": 49,
+            "value": 1,
+            "src": "parse_qinq_vlan",
+            "dst": "parse_set_prio_high",
+            "condition": "16w0x88cc",
+            "transition_type": "select"
+          },
+          {
+            "row": 45,
+            "col": 49,
+            "value": 1,
+            "src": "parse_qinq_vlan",
+            "dst": "parse_set_prio_high",
+            "condition": "16w0x8809",
+            "transition_type": "select"
+          },
+          {
+            "row": 45,
+            "col": 64,
+            "value": 1,
+            "src": "parse_qinq_vlan",
+            "dst": "accept",
+            "condition": "default",
+            "transition_type": "select"
+          },
+          {
+            "row": 46,
+            "col": 64,
+            "value": 1,
+            "src": "parse_roce",
+            "dst": "accept",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 47,
+            "col": 64,
+            "value": 1,
+            "src": "parse_roce_v2",
+            "dst": "accept",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 48,
+            "col": 64,
+            "value": 1,
+            "src": "parse_sctp",
+            "dst": "accept",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 49,
+            "col": 64,
+            "value": 1,
+            "src": "parse_set_prio_high",
+            "dst": "accept",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 50,
+            "col": 64,
+            "value": 1,
+            "src": "parse_set_prio_max",
+            "dst": "accept",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 51,
+            "col": 64,
+            "value": 1,
+            "src": "parse_set_prio_med",
+            "dst": "accept",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 52,
+            "col": 64,
+            "value": 1,
+            "src": "parse_sflow",
+            "dst": "accept",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 53,
+            "col": 58,
+            "value": 1,
+            "src": "parse_snap_header",
+            "dst": "parse_vlan",
+            "condition": "16w0x8100",
+            "transition_type": "select"
+          },
+          {
+            "row": 53,
+            "col": 44,
+            "value": 1,
+            "src": "parse_snap_header",
+            "dst": "parse_qinq",
+            "condition": "16w0x9100",
+            "transition_type": "select"
+          },
+          {
+            "row": 53,
+            "col": 37,
+            "value": 1,
+            "src": "parse_snap_header",
+            "dst": "parse_mpls",
+            "condition": "16w0x8847",
+            "transition_type": "select"
+          },
+          {
+            "row": 53,
+            "col": 31,
+            "value": 1,
+            "src": "parse_snap_header",
+            "dst": "parse_ipv4",
+            "condition": "16w0x800",
+            "transition_type": "select"
+          },
+          {
+            "row": 53,
+            "col": 33,
+            "value": 1,
+            "src": "parse_snap_header",
+            "dst": "parse_ipv6",
+            "condition": "16w0x86dd",
+            "transition_type": "select"
+          },
+          {
+            "row": 53,
+            "col": 1,
+            "value": 1,
+            "src": "parse_snap_header",
+            "dst": "parse_arp_rarp",
+            "condition": "16w0x806",
+            "transition_type": "select"
+          },
+          {
+            "row": 53,
+            "col": 49,
+            "value": 1,
+            "src": "parse_snap_header",
+            "dst": "parse_set_prio_high",
+            "condition": "16w0x88cc",
+            "transition_type": "select"
+          },
+          {
+            "row": 53,
+            "col": 49,
+            "value": 1,
+            "src": "parse_snap_header",
+            "dst": "parse_set_prio_high",
+            "condition": "16w0x8809",
+            "transition_type": "select"
+          },
+          {
+            "row": 53,
+            "col": 64,
+            "value": 1,
+            "src": "parse_snap_header",
+            "dst": "accept",
+            "condition": "default",
+            "transition_type": "select"
+          },
+          {
+            "row": 54,
+            "col": 51,
+            "value": 1,
+            "src": "parse_tcp",
+            "dst": "parse_set_prio_med",
+            "condition": "16w179",
+            "transition_type": "select"
+          },
+          {
+            "row": 54,
+            "col": 51,
+            "value": 1,
+            "src": "parse_tcp",
+            "dst": "parse_set_prio_med",
+            "condition": "16w639",
+            "transition_type": "select"
+          },
+          {
+            "row": 54,
+            "col": 64,
+            "value": 1,
+            "src": "parse_tcp",
+            "dst": "accept",
+            "condition": "default",
+            "transition_type": "select"
+          },
+          {
+            "row": 55,
+            "col": 22,
+            "value": 1,
+            "src": "parse_trill",
+            "dst": "parse_inner_ethernet",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 56,
+            "col": 61,
+            "value": 1,
+            "src": "parse_udp",
+            "dst": "parse_vxlan",
+            "condition": "16w4789",
+            "transition_type": "select"
+          },
+          {
+            "row": 56,
+            "col": 15,
+            "value": 1,
+            "src": "parse_udp",
+            "dst": "parse_geneve",
+            "condition": "16w6081",
+            "transition_type": "select"
+          },
+          {
+            "row": 56,
+            "col": 62,
+            "value": 1,
+            "src": "parse_udp",
+            "dst": "parse_vxlan_gpe",
+            "condition": "16w4790",
+            "transition_type": "select"
+          },
+          {
+            "row": 56,
+            "col": 51,
+            "value": 1,
+            "src": "parse_udp",
+            "dst": "parse_set_prio_med",
+            "condition": "16w67",
+            "transition_type": "select"
+          },
+          {
+            "row": 56,
+            "col": 51,
+            "value": 1,
+            "src": "parse_udp",
+            "dst": "parse_set_prio_med",
+            "condition": "16w68",
+            "transition_type": "select"
+          },
+          {
+            "row": 56,
+            "col": 51,
+            "value": 1,
+            "src": "parse_udp",
+            "dst": "parse_set_prio_med",
+            "condition": "16w546",
+            "transition_type": "select"
+          },
+          {
+            "row": 56,
+            "col": 51,
+            "value": 1,
+            "src": "parse_udp",
+            "dst": "parse_set_prio_med",
+            "condition": "16w547",
+            "transition_type": "select"
+          },
+          {
+            "row": 56,
+            "col": 51,
+            "value": 1,
+            "src": "parse_udp",
+            "dst": "parse_set_prio_med",
+            "condition": "16w520",
+            "transition_type": "select"
+          },
+          {
+            "row": 56,
+            "col": 51,
+            "value": 1,
+            "src": "parse_udp",
+            "dst": "parse_set_prio_med",
+            "condition": "16w521",
+            "transition_type": "select"
+          },
+          {
+            "row": 56,
+            "col": 51,
+            "value": 1,
+            "src": "parse_udp",
+            "dst": "parse_set_prio_med",
+            "condition": "16w1985",
+            "transition_type": "select"
+          },
+          {
+            "row": 56,
+            "col": 52,
+            "value": 1,
+            "src": "parse_udp",
+            "dst": "parse_sflow",
+            "condition": "16w6343",
+            "transition_type": "select"
+          },
+          {
+            "row": 56,
+            "col": 64,
+            "value": 1,
+            "src": "parse_udp",
+            "dst": "accept",
+            "condition": "default",
+            "transition_type": "select"
+          },
+          {
+            "row": 57,
+            "col": 51,
+            "value": 1,
+            "src": "parse_udp_v6",
+            "dst": "parse_set_prio_med",
+            "condition": "16w67",
+            "transition_type": "select"
+          },
+          {
+            "row": 57,
+            "col": 51,
+            "value": 1,
+            "src": "parse_udp_v6",
+            "dst": "parse_set_prio_med",
+            "condition": "16w68",
+            "transition_type": "select"
+          },
+          {
+            "row": 57,
+            "col": 51,
+            "value": 1,
+            "src": "parse_udp_v6",
+            "dst": "parse_set_prio_med",
+            "condition": "16w546",
+            "transition_type": "select"
+          },
+          {
+            "row": 57,
+            "col": 51,
+            "value": 1,
+            "src": "parse_udp_v6",
+            "dst": "parse_set_prio_med",
+            "condition": "16w547",
+            "transition_type": "select"
+          },
+          {
+            "row": 57,
+            "col": 51,
+            "value": 1,
+            "src": "parse_udp_v6",
+            "dst": "parse_set_prio_med",
+            "condition": "16w520",
+            "transition_type": "select"
+          },
+          {
+            "row": 57,
+            "col": 51,
+            "value": 1,
+            "src": "parse_udp_v6",
+            "dst": "parse_set_prio_med",
+            "condition": "16w521",
+            "transition_type": "select"
+          },
+          {
+            "row": 57,
+            "col": 51,
+            "value": 1,
+            "src": "parse_udp_v6",
+            "dst": "parse_set_prio_med",
+            "condition": "16w1985",
+            "transition_type": "select"
+          },
+          {
+            "row": 57,
+            "col": 64,
+            "value": 1,
+            "src": "parse_udp_v6",
+            "dst": "accept",
+            "condition": "default",
+            "transition_type": "select"
+          },
+          {
+            "row": 58,
+            "col": 37,
+            "value": 1,
+            "src": "parse_vlan",
+            "dst": "parse_mpls",
+            "condition": "16w0x8847",
+            "transition_type": "select"
+          },
+          {
+            "row": 58,
+            "col": 31,
+            "value": 1,
+            "src": "parse_vlan",
+            "dst": "parse_ipv4",
+            "condition": "16w0x800",
+            "transition_type": "select"
+          },
+          {
+            "row": 58,
+            "col": 33,
+            "value": 1,
+            "src": "parse_vlan",
+            "dst": "parse_ipv6",
+            "condition": "16w0x86dd",
+            "transition_type": "select"
+          },
+          {
+            "row": 58,
+            "col": 1,
+            "value": 1,
+            "src": "parse_vlan",
+            "dst": "parse_arp_rarp",
+            "condition": "16w0x806",
+            "transition_type": "select"
+          },
+          {
+            "row": 58,
+            "col": 49,
+            "value": 1,
+            "src": "parse_vlan",
+            "dst": "parse_set_prio_high",
+            "condition": "16w0x88cc",
+            "transition_type": "select"
+          },
+          {
+            "row": 58,
+            "col": 49,
+            "value": 1,
+            "src": "parse_vlan",
+            "dst": "parse_set_prio_high",
+            "condition": "16w0x8809",
+            "transition_type": "select"
+          },
+          {
+            "row": 58,
+            "col": 64,
+            "value": 1,
+            "src": "parse_vlan",
+            "dst": "accept",
+            "condition": "default",
+            "transition_type": "select"
+          },
+          {
+            "row": 59,
+            "col": 22,
+            "value": 1,
+            "src": "parse_vntag",
+            "dst": "parse_inner_ethernet",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 60,
+            "col": 64,
+            "value": 1,
+            "src": "parse_vpls",
+            "dst": "accept",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 61,
+            "col": 22,
+            "value": 1,
+            "src": "parse_vxlan",
+            "dst": "parse_inner_ethernet",
+            "condition": "always",
+            "transition_type": "direct"
+          },
+          {
+            "row": 62,
+            "col": 16,
+            "value": 1,
+            "src": "parse_vxlan_gpe",
+            "dst": "parse_gpe_int_header",
+            "condition": "(8w0x8 &&& 8w0x8, 8w0x5)",
+            "transition_type": "select"
+          },
+          {
+            "row": 62,
+            "col": 22,
+            "value": 1,
+            "src": "parse_vxlan_gpe",
+            "dst": "parse_inner_ethernet",
+            "condition": "default",
+            "transition_type": "select"
+          },
+          {
+            "row": 63,
+            "col": 6,
+            "value": 1,
+            "src": "start",
+            "dst": "parse_ethernet",
+            "condition": "always",
+            "transition_type": "direct"
+          }
+        ]
+      }
+    }
+  ]
+}

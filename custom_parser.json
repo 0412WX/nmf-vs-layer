@@ -1,0 +1,116 @@
+{
+  "source_file": "custom_parser.p4",
+  "source_relative_path": "custom_parser.p4",
+  "num_parsers": 1,
+  "parsers": [
+    {
+      "parser_name": "packet_parser",
+      "num_nodes": 15,
+      "num_edges": 30,
+      "start_state": "start",
+      "nodes": [
+        "start",
+        "layer1_1",
+        "layer1_2",
+        "layer2_1",
+        "layer2_2",
+        "layer2_3",
+        "layer3_1",
+        "layer3_2",
+        "layer3_3",
+        "layer4_1",
+        "layer4_2",
+        "layer5_1",
+        "layer5_2",
+        "layer5_3",
+        "accept"
+      ],
+      "node_to_index": {
+        "start": 0,
+        "layer1_1": 1,
+        "layer1_2": 2,
+        "layer2_1": 3,
+        "layer2_2": 4,
+        "layer2_3": 5,
+        "layer3_1": 6,
+        "layer3_2": 7,
+        "layer3_3": 8,
+        "layer4_1": 9,
+        "layer4_2": 10,
+        "layer5_1": 11,
+        "layer5_2": 12,
+        "layer5_3": 13,
+        "accept": 14
+      },
+      "edges": [
+        {"src": "start", "dst": "layer1_1", "condition": "cond1", "transition_type": "select"},
+        {"src": "start", "dst": "layer1_2", "condition": "default", "transition_type": "select"},
+        
+        {"src": "layer1_1", "dst": "layer2_1", "condition": "cond1", "transition_type": "select"},
+        {"src": "layer1_1", "dst": "layer2_2", "condition": "default", "transition_type": "select"},
+        {"src": "layer1_2", "dst": "layer2_2", "condition": "cond1", "transition_type": "select"},
+        {"src": "layer1_2", "dst": "layer2_3", "condition": "default", "transition_type": "select"},
+        
+        {"src": "layer2_1", "dst": "layer3_1", "condition": "cond1", "transition_type": "select"},
+        {"src": "layer2_1", "dst": "layer3_2", "condition": "default", "transition_type": "select"},
+        {"src": "layer2_2", "dst": "layer3_2", "condition": "cond1", "transition_type": "select"},
+        {"src": "layer2_2", "dst": "layer3_3", "condition": "default", "transition_type": "select"},
+        {"src": "layer2_3", "dst": "layer3_3", "condition": "cond1", "transition_type": "select"},
+        
+        {"src": "layer3_1", "dst": "layer4_1", "condition": "cond1", "transition_type": "select"},
+        {"src": "layer3_1", "dst": "layer4_2", "condition": "default", "transition_type": "select"},
+        {"src": "layer3_2", "dst": "layer4_2", "condition": "cond1", "transition_type": "select"},
+        {"src": "layer3_3", "dst": "layer4_2", "condition": "default", "transition_type": "select"},
+        
+        {"src": "layer4_1", "dst": "layer5_1", "condition": "cond1", "transition_type": "select"},
+        {"src": "layer4_1", "dst": "layer5_2", "condition": "default", "transition_type": "select"},
+        {"src": "layer4_2", "dst": "layer5_2", "condition": "cond1", "transition_type": "select"},
+        {"src": "layer4_2", "dst": "layer5_3", "condition": "default", "transition_type": "select"},
+        
+        {"src": "layer5_2", "dst": "accept", "condition": "always", "transition_type": "direct"},
+        
+        {"src": "layer2_1", "dst": "accept", "condition": "shortcut1", "transition_type": "select"},
+        {"src": "layer3_1", "dst": "accept", "condition": "shortcut2", "transition_type": "select"},
+        {"src": "layer4_1", "dst": "accept", "condition": "shortcut3", "transition_type": "select"}
+      ],
+      "sparse_matrix": {
+        "format": "coo",
+        "shape": [15, 15],
+        "rows": [
+          0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 6, 6, 7, 8, 9, 9, 10, 10, 12, 3, 6, 9
+        ],
+        "cols": [
+          1, 2, 3, 4, 4, 5, 6, 7, 7, 8, 8, 9, 10, 10, 10, 11, 12, 12, 13, 14, 14, 14, 14
+        ],
+        "data": [
+          1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+        ],
+        "entries": [
+          {"row": 0, "col": 1, "value": 1, "src": "start", "dst": "layer1_1", "condition": "cond1", "transition_type": "select"},
+          {"row": 0, "col": 2, "value": 1, "src": "start", "dst": "layer1_2", "condition": "default", "transition_type": "select"},
+          {"row": 1, "col": 3, "value": 1, "src": "layer1_1", "dst": "layer2_1", "condition": "cond1", "transition_type": "select"},
+          {"row": 1, "col": 4, "value": 1, "src": "layer1_1", "dst": "layer2_2", "condition": "default", "transition_type": "select"},
+          {"row": 2, "col": 4, "value": 1, "src": "layer1_2", "dst": "layer2_2", "condition": "cond1", "transition_type": "select"},
+          {"row": 2, "col": 5, "value": 1, "src": "layer1_2", "dst": "layer2_3", "condition": "default", "transition_type": "select"},
+          {"row": 3, "col": 6, "value": 1, "src": "layer2_1", "dst": "layer3_1", "condition": "cond1", "transition_type": "select"},
+          {"row": 3, "col": 7, "value": 1, "src": "layer2_1", "dst": "layer3_2", "condition": "default", "transition_type": "select"},
+          {"row": 4, "col": 7, "value": 1, "src": "layer2_2", "dst": "layer3_2", "condition": "cond1", "transition_type": "select"},
+          {"row": 4, "col": 8, "value": 1, "src": "layer2_2", "dst": "layer3_3", "condition": "default", "transition_type": "select"},
+          {"row": 5, "col": 8, "value": 1, "src": "layer2_3", "dst": "layer3_3", "condition": "cond1", "transition_type": "select"},
+          {"row": 6, "col": 9, "value": 1, "src": "layer3_1", "dst": "layer4_1", "condition": "cond1", "transition_type": "select"},
+          {"row": 6, "col": 10, "value": 1, "src": "layer3_1", "dst": "layer4_2", "condition": "default", "transition_type": "select"},
+          {"row": 7, "col": 10, "value": 1, "src": "layer3_2", "dst": "layer4_2", "condition": "cond1", "transition_type": "select"},
+          {"row": 8, "col": 10, "value": 1, "src": "layer3_3", "dst": "layer4_2", "condition": "default", "transition_type": "select"},
+          {"row": 9, "col": 11, "value": 1, "src": "layer4_1", "dst": "layer5_1", "condition": "cond1", "transition_type": "select"},
+          {"row": 9, "col": 12, "value": 1, "src": "layer4_1", "dst": "layer5_2", "condition": "default", "transition_type": "select"},
+          {"row": 10, "col": 12, "value": 1, "src": "layer4_2", "dst": "layer5_2", "condition": "cond1", "transition_type": "select"},
+          {"row": 10, "col": 13, "value": 1, "src": "layer4_2", "dst": "layer5_3", "condition": "default", "transition_type": "select"},
+          {"row": 12, "col": 14, "value": 1, "src": "layer5_2", "dst": "accept", "condition": "always", "transition_type": "direct"},
+          {"row": 3, "col": 14, "value": 1, "src": "layer2_1", "dst": "accept", "condition": "shortcut1", "transition_type": "select"},
+          {"row": 6, "col": 14, "value": 1, "src": "layer3_1", "dst": "accept", "condition": "shortcut2", "transition_type": "select"},
+          {"row": 9, "col": 14, "value": 1, "src": "layer4_1", "dst": "accept", "condition": "shortcut3", "transition_type": "select"}
+        ]
+      }
+    }
+  ]
+}
